@@ -1,15 +1,22 @@
+<x-app-layout>
+
+</x-app-layout>
+
 <!DOCTYPE html>
 <html lang="en">
 
+{{-- Styling --}}
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    @include('admin.admincss')
 </head>
 
 <body>
-    <h1>ADMINS</h1>
+    @include('admin.navbar')
+    <!-- main-panel ends -->
+
+    <!-- container-scroller -->
+    @include('admin.adminscripts')
 </body>
 
 </html>

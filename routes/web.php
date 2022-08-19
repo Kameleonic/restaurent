@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +23,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('home', [HomeController::class, 'index']);
+
+Route::get('/users', [AdminController::class, 'user']);
+
+Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
 
 require __DIR__ . '/auth.php';
