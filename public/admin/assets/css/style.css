@@ -10640,7 +10640,7 @@ textarea.is-invalid.tt-hint {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center; }
-  
+
   .btn-group-vertical > .btn,
   .fc .btn-group-vertical > button,
   .ajax-upload-dragdrop .btn-group-vertical > .ajax-file-upload,
@@ -20325,10 +20325,8 @@ div.tagsinput {
 /* Sidebar */
 .sidebar {
   min-height: calc(100vh - 70px);
-  background: #191c24;
-  font-weight: normal;
   padding: 0;
-  width: 244px;
+  width: 200px;
   z-index: 11;
   transition: width 0.25s ease, background 0.25s ease;
   -webkit-transition: width 0.25s ease, background 0.25s ease;
@@ -20339,8 +20337,7 @@ div.tagsinput {
     -webkit-transition: width 0.25s ease, background 0.25s ease;
     -moz-transition: width 0.25s ease, background 0.25s ease;
     -ms-transition: width 0.25s ease, background 0.25s ease;
-    background: #191c24;
-    width: 244px;
+    width: 200px;
     height: 70px; }
     @media (max-width: 991px) {
       .sidebar .sidebar-brand-wrapper {
@@ -20355,7 +20352,7 @@ div.tagsinput {
       .sidebar .sidebar-brand-wrapper .sidebar-brand:active, .sidebar .sidebar-brand-wrapper .sidebar-brand:focus, .sidebar .sidebar-brand-wrapper .sidebar-brand:hover {
         color: #252b3e; }
       .sidebar .sidebar-brand-wrapper .sidebar-brand img {
-        width: calc(244px - 120px);
+        width: calc(200px - 120px);
         max-width: 100%;
         height: 28px;
         margin: auto;
@@ -20407,8 +20404,7 @@ div.tagsinput {
           .sidebar .nav .nav-item .nav-link i.menu-icon {
             font-size: 1rem;
             line-height: 1;
-            margin-left: auto;
-            color: #bba8bff5; }
+            margin-left: auto; }
             .rtl .sidebar .nav .nav-item .nav-link i.menu-icon {
               margin-left: 0;
               margin-right: auto; }
@@ -20578,7 +20574,7 @@ div.tagsinput {
         margin-right: 0.5rem;
         font-size: 0.8125rem;
         line-height: 1;
-        background: rgba(108, 114, 147, 0.2);
+        background: none;
         width: 31px;
         height: 31px;
         border-radius: 100%;

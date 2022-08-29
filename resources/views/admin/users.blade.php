@@ -11,13 +11,13 @@
     <div class="container-scroller">
 
         @include('admin.navbar')
-        <div class="relative rounded-lg top-60 p-5 right-[-60px]">
-            <table class="bg-gray-400 text-center">
+        <div class="mx-auto dataTables_wrapper w-1/2 my-10">
+            <table class="bg-gray-700 rounded-md dataTable shadow-md text-center">
 
-                <tr>
-                    <th class="p-3 border-b-2 border-gray-700">Name</th>
-                    <th class="p-3 border-b-2 border-gray-700">Email</th>
-                    <th class="p-3 border-b-2 border-gray-700">Action</th>
+                <tr class="thead">
+                    <th class="p-3 border-b-3 border-gray-300">Name</th>
+                    <th class="p-3 border-b-3 border-gray-300">Email</th>
+                    <th class="p-3 border-b-3 border-gray-300">Action</th>
                 </tr>
                 @foreach ($data as $data)
                     <tr class="text-center">

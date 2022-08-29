@@ -13,6 +13,10 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/variables.css') }}">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -23,11 +27,7 @@
         @include('layouts.navigation')
 
         <!-- Page Heading -->
-        <header class="bg-white shadow">
-            <div class="">
-                {{-- {{ $header }} --}}
-            </div>
-        </header>
+
 
         <!-- Page Content -->
         <main>

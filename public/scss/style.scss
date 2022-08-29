@@ -143,7 +143,7 @@
 @import "components/typography";
 @import "components/misc";
 @import "components/footer";
-@import "components/utilities";
+// @import "components/utilities";
 @import "components/demo";
 
 /*-------------------------------------------------------------------*/
@@ -226,6 +226,6 @@
 @import "components/landing-screens/auth";
 
 @import './navbar';
-@import './sidebar';
+// @import './sidebar';
 @import './layouts';
 @import './vertical/vertical-wrapper';

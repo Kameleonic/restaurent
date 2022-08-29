@@ -113,6 +113,7 @@ $font-weight-medium: 500;
 $font-weight-bold: 700;
 
 $default-font-size: .875rem; // 14px as base font size
+$table-th-font-size: 1.25rem; // 14px as base font size
 
 $text-muted: #6c7293;
 $body-color: #ffffff;
@@ -154,8 +155,8 @@ $navbar-icon-font-size: 1.125rem;
 ///////// NAVBAR ////////
 
 ////////// SIDEBAR ////////
-$sidebar-width-lg: 244px;
-$sidebar-width-mini: 185px;
+$sidebar-width-lg: 175px;
+$sidebar-width-mini: 150px;
 $sidebar-width-icon: 70px;
 
 $sidebar-dark-bg: #191c24;
@@ -297,7 +298,7 @@ $progress-bg: $content-bg;
 ////////// MEASUREMENT AND PROPERTY VARIABLES //////////
 $boxed-container-width: 1200px;
 $border-property: 1px solid $border-color;
-$card-spacing-y: 2.5rem;  
+$card-spacing-y: 2.5rem;
 $card-padding-y: 1.75rem;
 $card-padding-x: 1.5625rem;
 $card-border-radius: 0.25rem;

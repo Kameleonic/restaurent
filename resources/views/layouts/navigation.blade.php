@@ -31,6 +31,7 @@
 
                     <x-slot name="content" class="">
                         <!-- Authentication -->
+                        <a class="dropdown-item pb-1" href="{{ url('/users') }}">Dashboard</a>
                         <a class="dropdown-item pb-1" href="{{ route('profile') }}">Profile</a>
                         <a class="dropdown-item pb-1" href="{{ route('logout') }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
