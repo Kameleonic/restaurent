@@ -49,6 +49,7 @@
                         <th class="p-4 border-b-2 border-white">Price</th>
                         <th class="p-4 border-b-2 border-white">Description</th>
                         <th class="p-4 border-b-2 border-white">Image</th>
+                        <th class="p-4 border-b-2 border-white">Actions</th>
                     </tr>
                     @foreach ($data as $data)
                         <tr class="mx-4">
@@ -56,8 +57,11 @@
                             <td class="my-1 text-lg">{{ $data->price }}</td>
                             <td class="my-1 text-lg">{{ $data->description }}</td>
                             <td class="my-1 text-lg"><img class="w-10 h-10 rounded-full m-auto"
-                                    src="/foodimage/{{ $data->image }}"</td>
-                        </tr>
+                                    src="/foodimage/{{ $data->image }}"></td>
+                            <td class="my-1 text-lg">
+                                <a href="{{ url('/editmenu') }}">Edit</a>/
+                                <a href="{{ url('/deletemenu') }}">Delete</a>
+                            </td>
                     @endforeach
                 </table>
             </div>

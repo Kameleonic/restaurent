@@ -25,6 +25,14 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function deletemenu($id)
+    {
+        $data = Food::find($id);
+        $data->delete();
+
+        return redirect()->back();
+    }
+
     // Show the food menu inside the admin dashboard
     public function foodMenu()
     {
