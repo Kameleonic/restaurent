@@ -28,7 +28,8 @@ class AdminController extends Controller
     // Show the food menu inside the admin dashboard
     public function foodMenu()
     {
-        return view('admin.foodmenu');
+        $data = Food::all();
+        return view('admin.foodmenu', compact('data'));
     }
 
 

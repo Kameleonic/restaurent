@@ -14,6 +14,7 @@
         <div class="col-lg-12">
             <div class="owl-menu-item owl-carousel">
 
+                <!-- // Loop through the food on the menu  -->
                 @foreach ($data as $data)
                     <div class="item">
                         <div style="background-image: url('/foodimage/{{ $data->image }}')" class='card'>
