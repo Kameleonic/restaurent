@@ -17,15 +17,20 @@ use App\Http\Controllers\AdminController;
 
 
 Route::get('/redirects', [HomeController::class, 'redirects']);
+Route::get('/', [HomeController::class, 'index']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('home', [HomeController::class, 'index']);
 
 Route::get('/users', [AdminController::class, 'user']);
-
+Route::get('/foodmenu', [AdminController::class, 'foodmenu']);
+Route::get('/delete-menu-item/{id}', [AdminController::class, 'deleteMenuItem']);
+Route::get('/edit-item/{id}', [AdminController::class, 'editMenuItem']);
+Route::post('/update/{id}', [AdminController::class, 'update']);
+Route::post('/create-menu-item', [AdminController::class, 'createMenuItem']);
 Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
 
 require __DIR__ . '/auth.php';
