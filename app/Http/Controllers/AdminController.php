@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Food;
 
+use function PHPUnit\Framework\isNull;
+
 class AdminController extends Controller
 {
 
@@ -25,10 +27,45 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function deletemenu($id)
+
+
+    /**
+     * Delete a food menu entry.
+     *
+     * @param  $data
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function deleteMenuItem($id)
     {
         $data = Food::find($id);
         $data->delete();
+
+        return redirect()->back();
+    }
+
+    public function editMenuItem($id)
+    {
+        $data = Food::find($id);
+
+        return view('admin.editfood', compact('data'));
+    }
+
+    public function update(REquest $request, $id)
+    {
+        $data = Food::find($id);
+
+
+
+        $image = $request->image;
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
+
+        $request->image->move('foodimage', $imagename);
+        $data->image = $imagename;
+        $data->title = $request->title;
+        $data->price = $request->price;
+        $data->description = $request->description;
+
+        $data->update();
 
         return redirect()->back();
     }
@@ -40,9 +77,13 @@ class AdminController extends Controller
         return view('admin.foodmenu', compact('data'));
     }
 
-
-    // Upload a new food menu item inside the admin dashboard
-    public function upload(Request $request)
+    /**
+     * Delete a food menu entry.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function createMenuItem(Request $request)
     {
         $data = new Food;
 

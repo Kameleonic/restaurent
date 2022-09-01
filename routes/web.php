@@ -27,8 +27,10 @@ Route::get('/dashboard', function () {
 
 Route::get('/users', [AdminController::class, 'user']);
 Route::get('/foodmenu', [AdminController::class, 'foodmenu']);
-Route::get('/deleteuser/{id}', [AdminController::class, 'deletemenu']);
-Route::post('/uploadfood', [AdminController::class, 'upload']);
+Route::get('/delete-menu-item/{id}', [AdminController::class, 'deleteMenuItem']);
+Route::get('/edit-item/{id}', [AdminController::class, 'editMenuItem']);
+Route::post('/update/{id}', [AdminController::class, 'update']);
+Route::post('/create-menu-item', [AdminController::class, 'createMenuItem']);
 Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
 
 require __DIR__ . '/auth.php';

@@ -16,7 +16,7 @@
         @include('admin.navbar')
         <!-- main-panel ends -->
         <div style="position: relative; top: 60px; right: -150px;">
-            <form action="{{ url('/uploadfood') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('/create-menu-item') }}" method="POST" enctype="multipart/form-data">
 
                 @csrf
 
@@ -59,8 +59,8 @@
                             <td class="my-1 text-lg"><img class="w-10 h-10 rounded-full m-auto"
                                     src="/foodimage/{{ $data->image }}"></td>
                             <td class="my-1 text-lg">
-                                <a href="{{ url('/editmenu') }}">Edit</a>/
-                                <a href="{{ url('/deletemenu') }}">Delete</a>
+                                <a href="{{ url('/edit-item', $data->id) }}">Edit</a>/
+                                <a href="{{ url('/delete-menu-item', $data->id) }}">Delete</a>
                             </td>
                     @endforeach
                 </table>
