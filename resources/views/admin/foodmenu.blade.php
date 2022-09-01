@@ -8,6 +8,7 @@
 {{-- Styling --}}
 
 <head>
+
     @include('admin.admincss')
 </head>
 
@@ -43,26 +44,28 @@
             </form>
 
             <div>
-                <table class="bg-black border text-xl border-white rounded-lg">
-                    <tr>
+                <table id="menu_items" class="dataTable bg-accent text-white text-lg rounded-lg">
+                    <thead class=" border-b-2 border-white">
                         <th class="p-4 border-b-2 border-white">Food Item</th>
                         <th class="p-4 border-b-2 border-white">Price</th>
                         <th class="p-4 border-b-2 border-white">Description</th>
                         <th class="p-4 border-b-2 border-white">Image</th>
                         <th class="p-4 border-b-2 border-white">Actions</th>
-                    </tr>
-                    @foreach ($data as $data)
-                        <tr class="mx-4">
-                            <td class="my-1 text-lg">{{ $data->title }}</td>
-                            <td class="my-1 text-lg">{{ $data->price }}</td>
-                            <td class="my-1 text-lg">{{ $data->description }}</td>
-                            <td class="my-1 text-lg"><img class="w-10 h-10 rounded-full m-auto"
-                                    src="/foodimage/{{ $data->image }}"></td>
-                            <td class="my-1 text-lg">
-                                <a href="{{ url('/edit-item', $data->id) }}">Edit</a>/
-                                <a href="{{ url('/delete-menu-item', $data->id) }}">Delete</a>
-                            </td>
-                    @endforeach
+                    </thead>
+                    <tbody>
+                        @foreach ($data as $data)
+                            <tr class="mx-4">
+                                <td class="my-1 text-lg">{{ $data->title }}</td>
+                                <td class="my-1 text-lg">{{ $data->price }}</td>
+                                <td class="my-1 text-lg">{{ $data->description }}</td>
+                                <td class="my-1 text-lg"><img class="w-10 h-10 rounded-full m-auto"
+                                        src="/foodimage/{{ $data->image }}"></td>
+                                <td class="my-1 text-lg">
+                                    <a href="{{ url('/edit-item', $data->id) }}">Edit</a>/
+                                    <a href="{{ url('/delete-menu-item', $data->id) }}">Delete</a>
+                                </td>
+                        @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>

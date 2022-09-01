@@ -15,7 +15,10 @@
 <!-- inject:css -->
 <!-- endinject -->
 <!-- Layout styles -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css" defer />
 <link rel="stylesheet" href="/admin/assets/css/style.css">
 <link rel="stylesheet" href="/admin/assets/css/custom.css">
+
+
 <!-- End layout styles -->
 <link rel="shortcut icon" href="/admin/assets/images/favicon.png" />

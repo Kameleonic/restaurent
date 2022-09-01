@@ -1,7 +1,13 @@
+/* BEGIN - Root variables */
 :root {
     --accent: #fb5849;
     --accent-fade: #FC9A91;
+    --default-dashboard-text: #eaeaea;
   }
+
+  /* END - Root variables */
+
+  /* BEGIN - Custom button - Styling */
 
 .btn-accent {
     border-radius: 5px;
@@ -13,6 +19,8 @@
     background-color: var(--accent);
     border: 2px solid var(--accent-fade)
 }
+
+/* END - Custom button - Styling */
 
 /* BEGIN - Custom form file input - Styling */
 
@@ -59,3 +67,20 @@
 
 
 /* END - Custom form file input - Styling */
+
+/* BEGIN - DataTables - Styling */
+
+th {
+    border-top: 0;
+    border-bottom-width: 2px!important;
+    border-color: white!important;
+    font-weight: 500;
+    color: var(--default-dashboard-text);
+}
+
+td {
+    border-bottom-width: 1px!important;
+    border-color: rgba(255, 255, 255, 0.092)!important;
+}
+
+/* END - DataTables - Styling */
