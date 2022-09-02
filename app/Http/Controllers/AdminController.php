@@ -50,24 +50,33 @@ class AdminController extends Controller
         return view('admin.editfood', compact('data'));
     }
 
-    public function update(REquest $request, $id)
+    /**
+     * Update the specified user.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  string  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
     {
+
+
         $data = Food::find($id);
 
+        if ($request->hasFile('image')) {
+            $imagename = time() . '.' . $request->image->getClientOriginalExtension();
 
+            $request->image->move('foodimage', $imagename);
+            $data->image = $imagename;
+        }
 
-        $image = $request->image;
-        $imagename = time() . '.' . $image->getClientOriginalExtension();
-
-        $request->image->move('foodimage', $imagename);
-        $data->image = $imagename;
         $data->title = $request->title;
         $data->price = $request->price;
         $data->description = $request->description;
 
-        $data->update();
+        $data->save();
 
-        return redirect()->back();
+        return redirect('foodmenu')->with('Success', 'Menu item successfully updated.');
     }
 
     // Show the food menu inside the admin dashboard

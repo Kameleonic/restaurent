@@ -20,8 +20,8 @@
         <!-- main-panel ends -->
         <div class="">
 
-            <form action="{{ url('/update', $data->id) }}" class="mt-10 mx-auto border-2 border-accent rounded-xl"
-                method="POST" enctype="multipart/form-data">
+            <form enctype="multipart/form-data" action="{{ url('/update', $data->id) }}"
+                class="mt-10 mx-auto border-2 border-accent rounded-xl" method="POST">
 
                 @csrf
 
@@ -31,7 +31,7 @@
                 </div>
                 <div class="flex flex-col bg-accent-fade">
                     <div class="mt-2 file-input">
-                        <input type="file" id="image" class="font-semibold file">
+                        <input type="file" name="image" id="image" class="font-semibold file">
                         <label class="mx-auto" for="image">Upload..</label>
                     </div>
                     <div class="align-self-end py-2 px-2">
