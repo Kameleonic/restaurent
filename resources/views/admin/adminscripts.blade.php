@@ -26,7 +26,14 @@
 <script src="admin/assets/js/dashboard.js"></script>
 <script>
     $(document).ready(function() {
-        $('#menu_items').DataTable();
+        $('#menu_items').DataTable({
+            columnDefs: [{
+                targets: 2,
+                render: function(data, type, row) {
+                    return data.substr(0, 42) + '…'
+                }
+            }]
+        });
     });
 </script>
 
