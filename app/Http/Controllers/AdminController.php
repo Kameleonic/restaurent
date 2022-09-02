@@ -59,23 +59,25 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-
+        // First we find the item with given $id.
         $data = Food::find($id);
 
+        // If the file input has a file present.
         if ($request->hasFile('image')) {
-            $imagename = time() . '.' . $request->image->getClientOriginalExtension();
-
+            $imagename = time() . '.' . $request->image->getClientOriginalExtension(); //NEED TO REMOVE THE OLD IMAGE FROM THE 'foodimage' DIRECTORY.
+            // Move the new image into the storage directory.
             $request->image->move('foodimage', $imagename);
             $data->image = $imagename;
         }
-
+        // Request the remaining attributes from the form
         $data->title = $request->title;
         $data->price = $request->price;
         $data->description = $request->description;
 
+        // Then finally update the menu item.
         $data->save();
 
+        // Redirect to the food menu page with a success message.
         return redirect('foodmenu')->with('Success', 'Menu item successfully updated.');
     }
 
