@@ -18,6 +18,7 @@ module.exports = {
         },
         extend: {
             colors: {
+            'ui-dark': '#0f1015',
             'accent': '#fb5849',
             'accent-fade': '#FC9A91',
             },

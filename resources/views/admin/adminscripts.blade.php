@@ -16,6 +16,9 @@
 {{-- <script src="admin/assets/js/jquery.cookie.js" type="text/javascript"></script> --}}
 <!-- End plugin js for this page -->
 <!-- inject:js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+</script>
 <script src="admin/assets/js/off-canvas.js"></script>
 <script src="admin/assets/js/hoverable-collapse.js"></script>
 <script src="admin/assets/js/misc.js"></script>

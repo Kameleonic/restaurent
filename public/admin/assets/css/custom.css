@@ -70,6 +70,10 @@
 
 /* BEGIN - DataTables - Styling */
 
+.dataTable {
+    border: 2px solid var(--accent)!important;
+}
+
 th {
     border-top: 0;
     border-bottom-width: 2px!important;
