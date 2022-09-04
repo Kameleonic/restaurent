@@ -33,4 +33,7 @@ Route::post("/update/{id}", [AdminController::class, 'update']);
 Route::post('/create-menu-item', [AdminController::class, 'createMenuItem']);
 Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
 
+
+Route::post("/reservation", [AdminController::class, 'reservation']);
+
 require __DIR__ . '/auth.php';

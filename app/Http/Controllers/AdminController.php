@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Food;
+use App\Models\Reservation;
 
 use function PHPUnit\Framework\isNull;
 
@@ -111,5 +112,27 @@ class AdminController extends Controller
         $data->save();
 
         return redirect()->back();
+    }
+    /**
+     * Delete a food menu entry.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function reservation(Request $request)
+    {
+        $data = new Reservation;
+
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+        $data->guest_count = $request->guest_count;
+        $data->date = $request->date;
+        $data->time = $request->time;
+        $data->message = $request->message;
+
+        $data->save();
+
+        return redirect()->back()->with('success', 'Reservation Successfully created.');
     }
 }
