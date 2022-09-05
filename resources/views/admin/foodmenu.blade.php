@@ -61,14 +61,21 @@
                 </div>
             </div>
             <div>
-                <a href="#" class="btn btn-accent bg-ui-dark transition duration-150" data-bs-toggle="modal"
-                    data-bs-target="#addMenuItemModal">
-                    <i class="bi-plus-circle me-2"></i>Add
-                </a>
+
             </div>
 
             <div>
-                <table id="menu_items" class="dataTable bg-ui-dark text-white text-lg rounded-lg shadow">
+                <div class="h-16">
+                    <th class="add-item-ro my-1 text-lg">
+                        <a href="#" class="btn btn-accent bg-ui-dark transition duration-150"
+                            data-bs-toggle="modal" data-bs-target="#addMenuItemModal">
+                            <x-lucide-plus />Add
+                        </a>
+                        Click to add more...
+                    </th>
+                </div>
+                <table id="menu_items" class="bg-ui-dark text-white text-lg rounded-lg shadow">
+
                     <thead class=" border-b-2 border-white">
                         <th class="p-4 border-b-2 border-white">Food Item</th>
                         <th class="p-4 border-b-2 border-white">Price</th>
@@ -77,17 +84,19 @@
                         <th class="p-4 border-b-2 border-white">Actions</th>
                     </thead>
                     <tbody>
+
                         @foreach ($data as $data)
                             <tr class="mx-4">
-                                <td class="my-1 text-lg">{{ $data->title }}</td>
-                                <td class="my-1 text-lg">{{ $data->price }}</td>
-                                <td class="my-1 text-lg">{{ $data->description }}</td>
-                                <td class="my-1 text-lg"><img class="w-10 h-10 rounded-full m-auto"
+                                <td class="trow my-1 text-lg">{{ $data->title }}</td>
+                                <td class="trow my-1 text-lg">{{ $data->price }}</td>
+                                <td class="trow my-1 text-lg">{{ $data->description }}</td>
+                                <td class="trow my-1 text-lg"><img class="w-10 h-10 rounded-full m-auto"
                                         src="/foodimage/{{ $data->image }}"></td>
-                                <td class="my-1 text-lg">
+                                <td class="trow my-1 text-lg">
                                     <a href="{{ url('/edit-item', $data->id) }}">Edit</a>/
                                     <a href="{{ url('/delete-menu-item', $data->id) }}">Delete</a>
                                 </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
