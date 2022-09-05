@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Food;
 use App\Models\Reservation;
+use Brian2694\Toastr\Facades\Toastr;
 
 use function PHPUnit\Framework\isNull;
 
@@ -133,6 +134,8 @@ class AdminController extends Controller
 
         $data->save();
 
-        return redirect()->back()->with('success', 'Reservation Successfully created.');
+        return redirect()
+            ->back()
+            ->with('message', 'Reservations successfully made.');
     }
 }

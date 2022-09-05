@@ -17,7 +17,9 @@ use App\Http\Controllers\AdminController;
 
 
 Route::get('/redirects', [HomeController::class, 'redirects']);
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('homepage');
+
+
 
 
 Route::get('/dashboard', function () {
