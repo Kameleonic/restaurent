@@ -2,13 +2,7 @@
 
 </x-app-layout>
 
-<!DOCTYPE html>
-<html lang="en">
-
-{{-- Styling --}}
-
 <head>
-
     @include('admin.admincss')
 </head>
 
@@ -23,13 +17,10 @@
                     <div class="modal-content">
                         <div class="bg-ui-dark">
 
-
                             <div class="p-2 text-right">
                                 <button class="close" data-bs-dismiss="modal">&#10006;
                                 </button>
                             </div>
-
-
 
                             <form class="form" action="{{ url('/create-menu-item') }}" method="POST"
                                 enctype="multipart/form-data">
@@ -70,9 +61,9 @@
                 </div>
             </div>
             <div>
-                <a href="#" class="btn btn-accent transition duration-150" data-bs-toggle="modal"
+                <a href="#" class="btn btn-accent bg-ui-dark transition duration-150" data-bs-toggle="modal"
                     data-bs-target="#addMenuItemModal">
-                    <i class="bi-plus-circle me-2"></i> Add
+                    <i class="bi-plus-circle me-2"></i>Add
                 </a>
             </div>
 

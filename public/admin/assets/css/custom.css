@@ -3,21 +3,35 @@
     --accent: #fb5849;
     --accent-fade: #FC9A91;
     --default-dashboard-text: #eaeaea;
+    --ui-dark: #0f1015;
+    --ui-dark-glow: #2d303f;
   }
 
   /* END - Root variables */
 
+  /* BEGIN - Custom Nav Link - Styling */
+
+.nav-item.active > .nav-link:before {
+    background-color: var(--accent)!important;
+}
   /* BEGIN - Custom button - Styling */
 
 .btn-accent {
     border-radius: 5px;
-    background-color: var(--accent-fade);
-    border: 2px solid var(--accent)
+    border-left: 4px solid var(--accent);
+    border-top: 1px solid var(--accent-fade);
+    border-bottom: 1px solid var(--accent-fade);
+    border-right: 1px solid var(--accent-fade);
 }
+
 .btn-accent:hover {
     border-radius: 5px;
-    background-color: var(--accent);
-    border: 2px solid var(--accent-fade)
+    background-color: var(--ui-dark-glow);
+    border-left: 4px solid var(--accent);
+    border-top: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+    border-right: 1px solid var(--accent);
+    transition-duration: 300ms;
 }
 
 /* END - Custom button - Styling */
@@ -72,6 +86,14 @@
 
 .dataTable {
     border: 2px solid var(--accent)!important;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border-color: var(--accent-fade);
+}
+
+.dataTables_wrapper .dataTables_length select {
+    border-color: var(--accent-fade);
 }
 
 th {

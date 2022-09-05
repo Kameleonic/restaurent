@@ -7619,7 +7619,7 @@ sup {
   top: -.5em; }
 
 a {
-  color: #0d6efd;
+  color: var(--accent);
   text-decoration: underline; }
   a:hover {
     color: #0a58ca; }
@@ -9220,15 +9220,15 @@ textarea.form-control-lg {
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); }
   .form-check-input:checked {
-    background-color: #0d6efd;
-    border-color: #0d6efd; }
+    background-color: var(--accent);
+    border-color: var(--accent); }
     .form-check-input:checked[type="checkbox"] {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e"); }
     .form-check-input:checked[type="radio"] {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e"); }
   .form-check-input[type="checkbox"]:indeterminate {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
+    background-color: var(--accent);
+    border-color: var(--accent);
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e"); }
   .form-check-input:disabled {
     pointer-events: none;
@@ -9286,7 +9286,7 @@ textarea.form-control-lg {
     width: 1rem;
     height: 1rem;
     margin-top: -0.25rem;
-    background-color: #0d6efd;
+    background-color: var(--accent);
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -9307,7 +9307,7 @@ textarea.form-control-lg {
   .form-range::-moz-range-thumb {
     width: 1rem;
     height: 1rem;
-    background-color: #0d6efd;
+    background-color: var(--accent);
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -10158,7 +10158,7 @@ textarea.is-invalid.tt-hint {
 
 .btn-link {
   font-weight: 400;
-  color: #0d6efd;
+  color: var(--accent);
   text-decoration: underline; }
   .btn-link:hover {
     color: #0a58ca; }
@@ -10410,7 +10410,7 @@ textarea.is-invalid.tt-hint {
   .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #0d6efd; }
+    background-color: var(--accent); }
   .dropdown-item.disabled, .dropdown-item:disabled {
     color: #adb5bd;
     pointer-events: none;
@@ -10443,7 +10443,7 @@ textarea.is-invalid.tt-hint {
       background-color: rgba(255, 255, 255, 0.15); }
     .dropdown-menu-dark .dropdown-item.active, .dropdown-menu-dark .dropdown-item:active {
       color: #fff;
-      background-color: #0d6efd; }
+      background-color: var(--accent); }
     .dropdown-menu-dark .dropdown-item.disabled, .dropdown-menu-dark .dropdown-item:disabled {
       color: #adb5bd; }
   .dropdown-menu-dark .dropdown-divider {
@@ -10640,7 +10640,7 @@ textarea.is-invalid.tt-hint {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center; }
-  
+
   .btn-group-vertical > .btn,
   .fc .btn-group-vertical > button,
   .ajax-upload-dragdrop .btn-group-vertical > .ajax-file-upload,
@@ -10689,7 +10689,7 @@ textarea.is-invalid.tt-hint {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: #0d6efd;
+  color: var(--accent);
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; }
   @media (prefers-reduced-motion: reduce) {
@@ -10735,7 +10735,7 @@ textarea.is-invalid.tt-hint {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #0d6efd; }
+  background-color: var(--accent); }
 
 .nav-fill > .nav-link,
 .nav-fill .nav-item {
@@ -11388,7 +11388,7 @@ textarea.is-invalid.tt-hint {
 .jsgrid .jsgrid-pager .jsgrid-pager-page a {
   position: relative;
   display: block;
-  color: #0d6efd;
+  color: var(--accent);
   text-decoration: none;
   background-color: #000000;
   border: 1px solid #dee2e6;
@@ -11421,8 +11421,8 @@ textarea.is-invalid.tt-hint {
 .jsgrid .jsgrid-pager .active.jsgrid-pager-page a {
   z-index: 3;
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd; }
+  background-color: var(--accent);
+  border-color: var(--accent); }
 
 .page-item.disabled .page-link, .jsgrid .jsgrid-pager .disabled.jsgrid-pager-nav-button .page-link, .jsgrid .jsgrid-pager .disabled.jsgrid-pager-page .page-link, .page-item.disabled .jsgrid .jsgrid-pager .jsgrid-pager-nav-button a, .jsgrid .jsgrid-pager .jsgrid-pager-nav-button .page-item.disabled a, .jsgrid .jsgrid-pager .disabled.jsgrid-pager-nav-button a,
 .page-item.disabled .jsgrid .jsgrid-pager .jsgrid-pager-page a, .jsgrid .jsgrid-pager .jsgrid-pager-page .page-item.disabled a,
@@ -11598,7 +11598,7 @@ textarea.is-invalid.tt-hint {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #0d6efd;
+  background-color: var(--accent);
   transition: width 0.6s ease; }
   @media (prefers-reduced-motion: reduce) {
     .progress-bar {
@@ -11662,8 +11662,8 @@ textarea.is-invalid.tt-hint {
   .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: #0d6efd;
-    border-color: #0d6efd; }
+    background-color: var(--accent);
+    border-color: var(--accent); }
   .list-group-item + .list-group-item {
     border-top-width: 0; }
     .list-group-item + .list-group-item.active {
