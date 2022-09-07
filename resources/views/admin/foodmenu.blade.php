@@ -69,7 +69,7 @@
                     <th class="add-item-ro my-1 text-lg">
                         <a href="#" class="btn btn-accent bg-ui-dark transition duration-150"
                             data-bs-toggle="modal" data-bs-target="#addMenuItemModal">
-                            <x-lucide-plus />Add
+                            Add
                         </a>
                         Click to add more...
                     </th>
