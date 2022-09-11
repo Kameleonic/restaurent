@@ -1,5 +1,5 @@
 <!-- partial:partials/_sidebar.html -->
-<nav class="sidebar sidebar-offcanvas" id="sidebar">
+<nav width="200px" class="sidebar sidebar-offcanvas" id="sidebar">
 
     <ul class="nav">
 
@@ -32,7 +32,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="{{ url('/reservations') }}">
                 <span class="menu-icon">
                     <i class="mdi mdi-chart-bar"></i>
                 </span>

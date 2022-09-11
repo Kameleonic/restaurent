@@ -96,46 +96,37 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
+    // Create a food item
     public function createMenuItem(Request $request)
     {
+        // Create a new instance of the model.
         $data = new Food;
 
+        // Request the image from the form.
         $image = $request->image;
+
+        // Name the 'imagename' value to date + file extention.
         $imagename = time() . '.' . $image->getClientOriginalExtension();
 
+        // Move the image to 'foodimage' folder and rename.
         $request->image->move('foodimage', $imagename);
         $data->image = $imagename;
 
+        // Then we request the item title & price from the form.
         $data->title = $request->title;
         $data->price = $request->price;
         $data->description = $request->description;
 
+        // Finally we save the instance.
         $data->save();
 
         return redirect()->back();
     }
-    /**
-     * Delete a food menu entry.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function reservation(Request $request)
+
+    public function viewReservations()
     {
-        $data = new Reservation;
+        $data = Reservation::all();
 
-        $data->name = $request->name;
-        $data->email = $request->email;
-        $data->phone = $request->phone;
-        $data->guest_count = $request->guest_count;
-        $data->date = $request->date;
-        $data->time = $request->time;
-        $data->message = $request->message;
-
-        $data->save();
-
-        return redirect()
-            ->back()
-            ->with('message', 'Reservations successfully made.');
+        return view('admin.reservations', compact('data'));
     }
 }

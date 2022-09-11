@@ -17,7 +17,7 @@ use App\Http\Controllers\AdminController;
 
 
 Route::get('/redirects', [HomeController::class, 'redirects']);
-Route::get('/', [HomeController::class, 'index'])->name('homepage');
+Route::get('/home', [HomeController::class, 'index'])->name('homepage');
 
 
 
@@ -27,15 +27,30 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
-Route::get('/users', [AdminController::class, 'user']);
-Route::get('/foodmenu', [AdminController::class, 'foodmenu']);
-Route::get('/delete-menu-item/{id}', [AdminController::class, 'deleteMenuItem']);
-Route::get('/edit-item/{id}', [AdminController::class, 'editMenuItem']);
-Route::post("/update/{id}", [AdminController::class, 'update']);
-Route::post('/create-menu-item', [AdminController::class, 'createMenuItem']);
-Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
+// View reservation page
+Route::get("/reservation", [HomeController::class, 'makeReservation']);
+// Make a reservation
+Route::post("/reserve", [HomeController::class, 'reserve']);
 
 
-Route::post("/reservation", [AdminController::class, 'reservation']);
+// * Admin Routes * //
 
+Route::group(['middleware' => ['auth']], function () {
+
+    Route::get('/users', [AdminController::class, 'user']);
+
+    Route::get('/foodmenu', [AdminController::class, 'foodmenu']);
+
+    Route::post("/update/{id}", [AdminController::class, 'update']);
+
+    Route::post('/create-menu-item', [AdminController::class, 'createMenuItem']);
+
+    Route::get('/edit-item/{id}', [AdminController::class, 'editMenuItem']);
+
+    Route::get('/delete-menu-item/{id}', [AdminController::class, 'deleteMenuItem']);
+
+    Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
+
+    Route::get("/reservations", [AdminController::class, 'viewReservations']);
+});
 require __DIR__ . '/auth.php';

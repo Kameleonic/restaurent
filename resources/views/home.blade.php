@@ -121,7 +121,7 @@ https://templatemo.com/tm-558-klassy-cafe
     </header>
     <!-- ***** Header Area End ***** -->
     @if (session()->has('message'))
-        <div style="z-index: 999;" class="alert alert-success z-999 bg-accent absolute">
+        <div style="z-index: 999;" class="notification">
             {{ session()->get('message') }}
         </div>
     @endif
@@ -135,7 +135,7 @@ https://templatemo.com/tm-558-klassy-cafe
                             <h4>KlassyCafe</h4>
                             <h6>THE BEST EXPERIENCE</h6>
                             <div class="main-white-button scroll-to-section">
-                                <a href="#reservation">Make A Reservation</a>
+                                <a href="{{ url('/reservation') }}">Make A Reservation</a>
                             </div>
                         </div>
                     </div>
@@ -648,6 +648,7 @@ https://templatemo.com/tm-558-klassy-cafe
             });
         });
     </script>
+
 
 </body>
 

@@ -12,9 +12,12 @@
 </head>
 
 <body>
-    <div class="container-scroller">
+    <div class="flex flex-row">
         @include('admin.navbar')
         <!-- main-panel ends -->
+        @include('admin.dashboard')
+    </div>
+    <div class="flex flex-row">
 
     </div>
     <!-- container-scroller -->

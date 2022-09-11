@@ -18,6 +18,15 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+    public function isUserAdmin($user)
+    {
+        if ($user->usertype == '1') {
+            return true;
+        }
+
+        return false;
+    }
+
     /**
      * The attributes that are mass assignable.
      *

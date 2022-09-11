@@ -112,3 +112,21 @@ td {
 
 
 /* END - DataTables - Styling */
+/* BEGIN - Alert - Styling */
+
+.notification {
+    display: flex;
+    width: 350px;
+    height: 88px;
+    background-color: var(--default-dashboard-text);
+    border: 3px solid var(--accent);
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    border-radius: 0.75rem;
+    padding: 1rem;
+
+}
+
+/* END - Alert - Styling */
+

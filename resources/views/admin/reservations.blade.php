@@ -11,7 +11,7 @@
     <div class="container-scroller">
         @include('admin.navbar')
         <!-- main-panel ends -->
-        <div style="position: relative; top: 60px; right: -150px;">
+        <div class="mx-auto" style="position: relative; top: 60px;">
             <div class="modal fade" id="addMenuItemModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 data-bs-backdrop="static" aria-hidden="true">
                 <div class="modal-dialog border-2 border-accent rounded">
@@ -88,11 +88,15 @@
 
                         @foreach ($data as $data)
                             <tr class="mx-4">
-                                <td class="trow my-1 text-lg">{{ $data->title }}</td>
-                                <td class="trow my-1 text-lg">{{ $data->price }}</td>
-                                <td class="trow my-1 text-lg">{{ $data->description }}</td>
-                                <td class="trow my-1 text-lg"><img class="w-10 h-10 rounded-full m-auto"
-                                        src="/foodimage/{{ $data->image }}"></td>
+                                <td class="trow my-1 text-lg">{{ $data->name }}</td>
+                                <td class="trow my-1 text-lg">{{ $data->email }}</td>
+                                <td class="trow my-1 text-lg">{{ $data->phone }}</td>
+                                <td class="trow my-1 text-lg">{{ $data->guest_count }}</td>
+                                <td class="trow my-1 text-lg">{{ $data->date }}</td>
+                                <td class="trow my-1 text-lg">{{ $data->time }}</td>
+                                <td class="trow my-1 text-lg">{{ $data->message }}</td>
+                                <td class="trow my-1 text-lg">{{ $data->created_at }}</td>
+                                <td class="trow my-1 text-lg">{{ $data->updated_at }}</td>
                                 <td class="trow my-1 text-lg">
                                     <a href="{{ url('/edit-item', $data->id) }}">Edit</a>/
                                     <a href="{{ url('/delete-menu-item', $data->id) }}">Delete</a>
