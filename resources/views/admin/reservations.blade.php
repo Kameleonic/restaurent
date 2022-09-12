@@ -8,98 +8,59 @@
 
 <body>
 
+
+
     <div class="container-scroller">
         @include('admin.navbar')
         <!-- main-panel ends -->
+        <!-- Modal -->
+
+
         <div class="mx-auto" style="position: relative; top: 60px;">
-            <div class="modal fade" id="addMenuItemModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                data-bs-backdrop="static" aria-hidden="true">
-                <div class="modal-dialog border-2 border-accent rounded">
-                    <div class="modal-content">
-                        <div class="bg-ui-dark">
-
-                            <div class="p-2 text-right">
-                                <button class="close" data-bs-dismiss="modal">&#10006;
-                                </button>
-                            </div>
-
-                            <form class="form" action="{{ url('/create-menu-item') }}" method="POST"
-                                enctype="multipart/form-data">
-
-                                @csrf
-
-                                <div class="flex bg-accent-fade p-3 flex-col justify-center">
-                                    <div class="flex flex-col my-2">
-
-                                    </div>
-                                    <div class="align-items-center flex flex-row my-2">
-                                        <label for="image"></label>
-                                        <input class="" style="color:slategrey" type="file" name="image">
-                                        <span class="text-lg text-ui-dark" for="price">£</span>
-                                        <input class="rounded-md ml-1 text-gray-800" type="number" name="price"
-                                            placeholder="Price" step="0.01">
-                                    </div>
-                                    <div class="flex flex-col my-2">
-                                        <label for="title"></label>
-                                        <input class="rounded-md text-gray-800 " type="text" name="title"
-                                            placeholder="Title">
-                                    </div>
-                                    <div class="flex flex-col my-2">
-                                        <label for="description"></label>
-                                        <textarea class="text-gray-800 rounded-md" maxlength="200" placeholder="Enter a description..." name="description"></textarea>
-                                    </div>
-
-                                </div>
-                                <div class="flex justify-center">
-                                    <div class="my-2">
-                                        <input type="submit" class="btn btn-accent" value="Save">
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div>
-
-            </div>
-
-            <div>
-                <div class="h-16">
-                    <th class="add-item-ro my-1 text-lg">
-                        <a href="#" class="btn btn-accent bg-ui-dark transition duration-150"
-                            data-bs-toggle="modal" data-bs-target="#addMenuItemModal">
-                            <x-lucide-plus />Add
-                        </a>
-                        Click to add more...
-                    </th>
-                </div>
                 <table id="menu_items" class="bg-ui-dark text-white text-lg rounded-lg shadow">
 
                     <thead class=" border-b-2 border-white">
-                        <th class="p-4 border-b-2 border-white">Food Item</th>
-                        <th class="p-4 border-b-2 border-white">Price</th>
-                        <th class="p-4 border-b-2 border-white">Description</th>
-                        <th class="p-4 border-b-2 border-white">Image</th>
+                        <th class="p-4 border-b-2 border-white">Name</th>
+                        <th class="p-4 border-b-2 border-white">Guest No.</th>
+                        <th class="p-4 border-b-2 border-white">Date</th>
+                        <th class="p-4 border-b-2 border-white">Time</th>
                         <th class="p-4 border-b-2 border-white">Actions</th>
+                        <th class="p-4 border-b-2 border-white">More Info</th>
                     </thead>
                     <tbody>
 
-                        @foreach ($data as $data)
+                        @foreach ($reservations as $reservation)
                             <tr class="mx-4">
-                                <td class="trow my-1 text-lg">{{ $data->name }}</td>
-                                <td class="trow my-1 text-lg">{{ $data->email }}</td>
-                                <td class="trow my-1 text-lg">{{ $data->phone }}</td>
-                                <td class="trow my-1 text-lg">{{ $data->guest_count }}</td>
-                                <td class="trow my-1 text-lg">{{ $data->date }}</td>
-                                <td class="trow my-1 text-lg">{{ $data->time }}</td>
-                                <td class="trow my-1 text-lg">{{ $data->message }}</td>
-                                <td class="trow my-1 text-lg">{{ $data->created_at }}</td>
-                                <td class="trow my-1 text-lg">{{ $data->updated_at }}</td>
+                                <td class="trow my-1 text-lg">{{ $reservation->name }}</td>
+                                {{-- <td class="trow my-1 text-lg">{{ $reservations->email }}</td>
+                                <td class="trow my-1 text-lg">{{ $reservations->phone }}</td> --}}
+                                <td class="trow my-1 text-lg">{{ $reservation->guest_count }}</td>
+                                <td class="trow my-1 text-lg">{{ $reservation->date }}</td>
+                                <td class="trow my-1 text-lg">{{ $reservation->time }}</td>
+                                {{-- <td class="trow my-1 text-lg">{{ $reservations->message }}</td>
+                                <td class="trow my-1 text-lg">{{ $reservations->created_at }}</td>
+                                <td class="trow my-1 text-lg">{{ $reservations->updated_at }}</td> --}}
                                 <td class="trow my-1 text-lg">
-                                    <a href="{{ url('/edit-item', $data->id) }}">Edit</a>/
-                                    <a href="{{ url('/delete-menu-item', $data->id) }}">Delete</a>
+                                    <a href="{{ url('/edit-item', $reservation->id) }}">Edit</a>/
+                                    <a href="{{ url('/delete-menu-item', $reservation->id) }}">Delete</a>
+                                </td>
+                                <td class="trow my-1 text-lg">
+                                    <form class="contents" method="post"
+                                        action="{{ url('reservation', $reservation->id) }}">
+                                        @method('get')
+                                        @csrf
+                                        <button type="submit" class="edit_btn"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke="var(--user-accent-color)" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7">
+                                                </path>
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -109,6 +70,18 @@
         </div>
     </div>
 
+    <!-- Button trigger modal -->
+
+
+
+    <script>
+        $('#viewReservationModal').on('show.bs.modal', event => {
+            var button = $(event.relatedTarget);
+            var modal = $(this);
+            // Use above variables to manipulate the DOM
+
+        });
+    </script>
     <!-- container-scroller -->
     @include('admin.adminscripts')
 </body>

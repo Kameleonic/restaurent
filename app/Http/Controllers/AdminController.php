@@ -123,10 +123,17 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function viewReservations()
-    {
-        $data = Reservation::all();
+    // public function viewReservations()
+    // {
+    //     $data = Reservation::all();
 
-        return view('admin.reservations', compact('data'));
-    }
+    //     return view('admin.reservations', compact('data'));
+    // }
+
+    // public function reservationInfo($id)
+    // {
+    //     $rs = Reservation::find($id);
+    //     dd($rs);
+    //     return view('admin.reservations', compact('rs'));
+    // }
 }

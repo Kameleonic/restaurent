@@ -43,5 +43,24 @@
         });
     });
 </script>
+<script>
+    $('input#submit').click(function(e) {
+        e.preventDefault();
+        var text = $('#mytext').val();
+        var url = 'your url' //we were using Link/addlink in the other example
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {
+                mytext: text
+            },
+            success: function() {
+                //Probably add the code to close your modal box here if successful
+                $('#linkSettings').hide();
+            },
+        });
+    });
+</script>
 
 <!-- End custom js for this page -->

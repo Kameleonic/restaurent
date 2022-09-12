@@ -1,5 +1,5 @@
 <!-- partial:partials/_sidebar.html -->
-<nav width="200px" class="sidebar sidebar-offcanvas" id="sidebar">
+<nav width="200px" class="sidebar sidebar-offcanvas border-r-4 border-accent" id="sidebar">
 
     <ul class="nav">
 

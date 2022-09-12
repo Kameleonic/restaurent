@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
 
-    Route::get("/reservations", [AdminController::class, 'viewReservations']);
+    Route::get("/reservations", [ReservationController::class, 'viewReservations']);
+
+    Route::get("/reservation/{id}", [ReservationController::class, 'reservationInfo']);
 });
 require __DIR__ . '/auth.php';
