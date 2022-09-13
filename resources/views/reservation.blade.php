@@ -31,7 +31,8 @@
             </div>
             <div class="col-lg-6">
                 <div class="contact-form">
-                    <form id="contact" action="{{ url('reservation') }}" method="post">
+                    <form id="contact" action="{{ url('reserve') }}" method="post">
+                        @method('POST')
                         @csrf
                         <div class="row">
                             <div class="col-lg-12">
@@ -56,7 +57,7 @@
                                 </fieldset>
                             </div>
                             <div class="col-md-6 col-sm-12">
-                                <input name="guest_count type="number" placeholder="No. of guests">
+                                <input name="guest_count" type="number" placeholder="No. of guests">
                             </div>
                             <div class="col-lg-6">
                                 <div id="filterDate2">

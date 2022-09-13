@@ -9,6 +9,21 @@
 
   /* END - Root variables */
 
+
+  .input-blank{
+    height: 46px;
+    background-color: rgb(226 232 240);
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .textarea-blank {
+    background-color: rgb(226 232 240);
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
   /* BEGIN - Custom Nav Link - Styling */
 
 .nav-item.active > .nav-link:before {

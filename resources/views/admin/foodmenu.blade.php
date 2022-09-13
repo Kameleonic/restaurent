@@ -75,7 +75,7 @@
                         Click to add more...
                     </th>
                 </div>
-                <table id="menu_items" class="bg-ui-dark text-white text-lg rounded-lg shadow">
+                <table id="menu_items" class="bg-ui-dark-glow text-white text-lg rounded-lg shadow">
 
                     <thead class=" border-b-2 border-white">
                         <th class="p-4 border-b-2 border-white">Food Item</th>

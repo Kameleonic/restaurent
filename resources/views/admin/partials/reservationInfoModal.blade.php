@@ -19,56 +19,99 @@
             <div class="flex flex-col">
                 <div class="flex-1">
                     <div
-                        class="flex flex-row justify-between border-t-2 border-l-2 border-r-2 bg-accent border-accent rounded-t-md p-3">
-                        <div class="text-2xl font-bold mt-1 mb-3 underline text-white">Reservation information.
+                        class="flex flex-row justify-between border-t-2 mb-0 border-l-2 border-r-2 bg-accent border-accent rounded-t-md pl-4 pt-3">
+                        <div class="text-xl font-bold mt-1 mx-2  text-white">Reservation information.
                         </div>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <a href="/reservations" class="close" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                        </button>
+                        </a>
                     </div>
 
 
-                    <div class="flex border-2 border-accent bg-accent-fade rounded-b p-4">
+                    <div class="flex border-2 border-accent bg-accent rounded-b p-4">
                         <div
-                            class="flex flex-1 flex-col justify-between bg-slate-200 rounded border border-slate-300 text-ui-dark p-2 text-center">
+                            class="flex flex-1 flex-col justify-between bg-ui-dark-glow rounded border border-slate-300 text-ui-dark p-2 text-center">
 
-                            <div class="flex flex-col mx-auto font-normal text-ui-dark">
-                                <div class="flex flex-row gap-4">
-                                    <div class="flex flex-col"><label class="mt-2 mb-1" for="">Customer
-                                            Name:</label>
-                                        <div class="p-2 border border-accent-fade my-2 text-lg rounded-md">
-                                            {{ $reservation->name }}
+                            <div
+                                class="flex lg:flex-row sm:flex-col sm:justify-center lg:justify-content-start gap-5 font-normal text-ui-dark">
+                                <div class="flex flex-col mx-4 lg:w-1/3">
+                                    <label class="mt-2 mb-1 text-slate-200 font-semibold text-lg"
+                                        for="">Customer
+                                        Name:</label>
+                                    <div class="border input-blank border-accent-fade text-lg rounded-md">
+                                        {{ $reservation->name }}
+                                    </div>
+
+                                    <label class="mt-2 mb-1 text-slate-200 font-semibold text-lg" for="">Email
+                                        Address:
+                                    </label>
+                                    <div class="border input-blank border-accent-fade text-lg rounded-md">
+                                        {{ $reservation->email }}
+                                    </div>
+                                    <div class="flex flex-row gap-1 justify-between">
+                                        <div class="flex flex-col flex-1">
+                                            <label class="mt-2 mb-1 text-slate-200 font-semibold text-lg"
+                                                for="">Contact
+                                                Number:</label>
+                                            <div class="border input-blank border-accent-fade text-lg rounded-md">
+                                                {{ $reservation->phone }}
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col flex-1">
+                                            <label class="mt-2 mb-1 text-slate-200 font-semibold text-lg"
+                                                for="">No. of Guests:</label>
+                                            <div class="border input-blank border-accent-fade text-lg rounded-md">
+                                                {{ $reservation->guest_count }}
+                                            </div>
                                         </div>
                                     </div>
+
+                                    <div class="flex flex-row gap-1 justify-between">
+                                        <div class="flex flex-col flex-1">
+                                            <label class="mt-2 mb-1 text-slate-200 font-semibold text-lg"
+                                                for="">Date
+                                                Requested:</label>
+                                            <div class="border input-blank border-accent-fade text-lg rounded-md">
+                                                {{ $reservation->date }}
+                                            </div>
+
+                                        </div>
+                                        <div class="flex flex-col flex-1">
+                                            <label class="mt-2 mb-1 text-slate-200 font-semibold text-lg"
+                                                for="">Time
+                                                Requested:</label>
+                                            <div class="border input-blank border-accent-fade text-lg rounded-md">
+                                                {{ $reservation->time }}
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="flex flex-col flex-1 justify-between mx-4">
                                     <div class="flex flex-col">
-                                        <label class="mt-2 mb-1" for="">Email Address:</label>
-                                        <div class="p-2 border border-accent-fade my-2 text-lg rounded-md">
-                                            {{ $reservation->email }}
+                                        <label class="mt-2 mb-1 text-slate-200 font-semibold text-lg"
+                                            for="">Reservation
+                                            Notes:</label>
+                                        <div class="border textarea-blank border-accent-fade text-lg rounded-md">
+                                            {{ $reservation->message }}
                                         </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between mb-2">
+                                        <button class="btn button btn-accent">Decline</button>
+                                        <button class="btn btn-accent">Confirm</button>
+
                                     </div>
                                 </div>
 
-                                <label class="mt-2 mb-1" for="">Contact Number:</label>
-                                <div class="p-2 border border-accent-fade my-2 text-lg rounded-md">
-                                    {{ $reservation->phone }}
-                                </div>
-                                <label class="mt-2 mb-1" for="">Date Requested:</label>
-                                <div class="p-2 border border-accent-fade my-2 text-lg rounded-md">
-                                    {{ $reservation->date }}
-                                </div>
-                                <label class="mt-2 mb-1" for="">Time Requested:</label>
-                                <div class="p-2 border border-accent-fade my-2 text-lg rounded-md">
-                                    {{ $reservation->time }}
-                                </div>
-                                <label class="mt-2 mb-1" for="">Reservation Notes:</label>
-                                <div class="p-2 border border-accent-fade my-2 text-lg rounded-md">
-                                    {{ $reservation->message }}
-                                </div>
 
                             </div>
-
-                            <div class="text-sm">Date
-                                Created:{{ $reservation->created_at }}</div>
+                            <div class="flex flex-row justify-content-around">
+                                <div class="text-sm text-white font-monospace">Date
+                                    Created:{{ $reservation->created_at }}</div>
+                                <div class="text-sm text-white font-monospace">Updated At:{{ $reservation->updated_at }}
+                                </div>
+                            </div>
                         </div>
 
                     </div>
