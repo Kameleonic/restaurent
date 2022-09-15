@@ -60,6 +60,7 @@
                                     <th class="p-4 border-b-2 border-accent-fade">Date</th>
                                     <th class="p-4 border-b-2 border-accent-fade">Time</th>
                                     <th class="p-4 border-b-2 border-accent-fade">More Info</th>
+                                    <th class="p-4 border-b-2 border-accent-fade">Actions</th>
                                 </thead>
                                 <tbody>
 
@@ -69,8 +70,12 @@
                                             {{-- <td class="trow my-1 text-lg">{{ $reservations->email }}</td>
                                 <td class="trow my-1 text-lg">{{ $reservations->phone }}</td> --}}
                                             <td class="trow my-1 text-lg">{{ $reservation->guest_count }}</td>
-                                            <td class="trow my-1 text-lg">{{ $reservation->date }}</td>
-                                            <td class="trow my-1 text-lg">{{ $reservation->time }}</td>
+                                            <td class="trow my-1 text-lg">
+                                                {{ \Carbon\Carbon::parse($reservation->date)->format('D, d M Y') }}
+                                            </td>
+                                            <td class="trow my-1 text-lg">
+                                                {{ \Carbon\Carbon::parse($reservation->time)->format('m:Ha') }}
+                                            </td>
                                             {{-- <td class="trow my-1 text-lg">{{ $reservations->message }}</td>
                                 <td class="trow my-1 text-lg">{{ $reservations->created_at }}</td>
                                 <td class="trow my-1 text-lg">{{ $reservations->updated_at }}</td> --}}
@@ -79,9 +84,31 @@
                                                     action="{{ url('reservation', $reservation->id) }}">
                                                     @method('get')
                                                     @csrf
-                                                    <button type="submit" class="btn btn-accent py-1">More Info
+                                                    <button type="submit" class="btn btn-accent py-1">View
                                                     </button>
                                                 </form>
+                                            </td>
+                                            <td class="trow my-1 w-10 text-lg">
+                                                <div class="flex flex-row justify-content-evenly">
+                                                    <form class="contents" method="post"
+                                                        action="{{ url('confirm-reservation', $reservation->id) }}">
+                                                        @method('post')
+                                                        @csrf
+                                                        <button type="submit" class="">
+                                                            <x-lucide-x-circle
+                                                                class="rounded-full w-4 h-4 bg-red-300 text-red-900" />
+                                                    </form>
+
+                                                    <form class="contents" method="post"
+                                                        action="{{ url('decline-reservation', $reservation->id) }}">
+                                                        @method('post')
+                                                        @csrf
+                                                        <button type="submit" class="">
+                                                            <x-lucide-x-circle
+                                                                class="rounded-full w-4 h-4 bg-green-300 text-green-900" />
+                                                        </button>
+                                                    </form>
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach

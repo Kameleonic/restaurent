@@ -31,7 +31,7 @@
 <!-- endinject -->
 <!-- Custom js for this page -->
 <script src="admin/assets/js/dashboard.js"></script>
-<script>
+{{-- <script>
     $(document).ready(function() {
         $('#menu_items').DataTable({
             columnDefs: [{
@@ -41,7 +41,7 @@
                 }
             }]
         });
-    });
+    }); --}}
 </script>
 <script>
     $('input#submit').click(function(e) {
