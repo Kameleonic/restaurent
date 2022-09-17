@@ -5,12 +5,32 @@
     --default-dashboard-text: #eaeaea;
     --ui-dark: #0f1015;
     --ui-dark-glow: #2d303f;
+
+  }
+
+  .required:after {
+    content: '*';
+    color: red;
+    padding-left: 0;
+  }
+  input::placeholder {
+    color: rgba(46, 46, 46, 0.415)!important;
+
+  }
+  textarea::placeholder {
+    color: rgba(46, 46, 46, 0.415)!important;
+  }
+  select option:first{
+    color: rgba(46, 46, 46, 0.415)!important;
+  }
+  .placeholder {
+    color: rgba(46, 46, 46, 0.415)!important;
   }
 
   /* END - Root variables */
 
 
-  .input-blank{
+  .input-blank {
     height: 46px;
     background-color: rgb(226 232 240);
     padding: 0.5rem;

@@ -67,7 +67,8 @@ class HomeController extends Controller
     {
         $data = new Reservation;
 
-        $data->name = $request->name;
+        $data->first_name = $request->first_name;
+        $data->last_name = $request->last_name;
         $data->email = $request->email;
         $data->phone = $request->phone;
         $data->guest_count = $request->guest_count;

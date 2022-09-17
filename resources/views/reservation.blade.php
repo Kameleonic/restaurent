@@ -36,59 +36,126 @@
                         @csrf
                         <div class="row">
                             <div class="col-lg-12">
-                                <h4>Table Reservation</h4>
+                                <h4>Reserve a Table...</h4>
                             </div>
                             <div class="col-lg-6 col-sm-12">
-                                <fieldset>
-                                    <input name="name" type="text" id="name" placeholder="Your Name*"
-                                        required="">
+                                <fieldset class="flex gap-4 justify-content-between">
+                                    <div class="flex flex-col flex-1">
+                                        <label for="first_name">First Name:
+                                            <span class="required"></span>
+                                        </label>
+                                        <input name="first_name" type="text" id="firstName" placeholder="John..."
+                                            required />
+                                    </div>
+                                    <div class="flex flex-col flex-1">
+                                        <label for="last_name">Last Name:
+                                            <span class="required"></span>
+                                        </label>
+                                        <input class="required" name="last_name" type="text" id="lastName"
+                                            placeholder="Smith..." required />
+                                    </div>
+
                                 </fieldset>
                             </div>
                             <div class="col-lg-6 col-sm-12">
                                 <fieldset>
+                                    <label for="email">Email:
+                                        <span class="required"></span>
+                                    </label>
                                     <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*"
-                                        placeholder="Your Email Address" required="">
+                                        placeholder="someone@example.com" required />
                                 </fieldset>
                             </div>
                             <div class="col-lg-6 col-sm-12">
                                 <fieldset>
-                                    <input name="phone" type="text" id="phone" placeholder="Phone Number*"
-                                        required="">
+                                    <label for="phone">Contact Number:</label>
+                                    <input name="phone" type="tel" id="phone" placeholder="" required>
                                 </fieldset>
                             </div>
                             <div class="col-md-6 col-sm-12">
-                                <input name="guest_count" type="number" placeholder="No. of guests">
+                                <fieldset>
+                                    <label for="guest_count">No. of Guests:
+                                        <span class="required"></span></label>
+                                    <input name="guest_count" type="number" placeholder="0-10">
+                                </fieldset>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 col-sm-12">
                                 <div id="filterDate2">
-                                    <div class="input-group date" data-date-format="dd/mm/yyyy">
-                                        <input name="date" id="date" type="text" class="form-control"
-                                            placeholder="dd/mm/yyyy">
-                                        <div class="input-group-addon">
-                                            <span class="glyphicon glyphicon-th"></span>
+
+                                    <div class="flex gap-4 justify-between">
+                                        <div class="flex flex-col sm:w-full lg:w-[146px]">
+                                            <label for="date">Date:
+                                                <span class="required"></span></label>
+                                            <input name="date" id="date" type="date"
+                                                class="form-control rounded-lg text-black-50" required>
+                                            <div class="input-group-addon">
+                                                <span class="glyphicon glyphicon-th"></span>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col flex-1">
+                                            <label for="guest_count">Time:
+                                                <span class="required"></span></label>
+                                            <input name="time" type="time" list="businessHours" required />
+                                            <datalist id="businessHours">
+                                                <option value="17:00"></option>
+                                                <option value="17:30"></option>
+                                                <option value="18:00"></option>
+                                                <option value="18:30"></option>
+                                                <option value="19:00"></option>
+                                                <option value="19:30"></option>
+                                                <option value="20:00"></option>
+                                                <option value="20:30"></option>
+                                                <option value="21:00"></option>
+                                                <option value="21:30"></option>
+                                                <option value="22:00"></option>
+                                            </datalist>
+                                            {{-- <input type="time" name="time" placeholder="Time&nbsp;*"> --}}
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-12">
-                                <input type="time" name="time" placeholder="Time">
-                            </div>
-                            <div class="col-lg-12">
+                            <div class="col-lg-6 col-sm-12">
+
                                 <fieldset>
-                                    <textarea name="message" rows="6" id="message" placeholder="Message" required=""></textarea>
+                                    <label for="allergies">Allergies:</label>
+                                    <select name="allergies" type="select" />
+
+
+                                    <option selected>None
+                                    </option>
+                                    <option value="">Lactose Intolerant</option>
+                                    <option value="">Gluten-free</option>
+                                    <option value="">Nuts/Peanuts</option>
+
+                                    </select>
+
                                 </fieldset>
+
                             </div>
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <button type="submit" id="form-submit" class="main-button-icon">Make A
-                                        Reservation</button>
-                                </fieldset>
-                            </div>
+
                         </div>
-                    </form>
+
+
+
+
+                        <fieldset>
+                            <textarea name="message" rows="6" id="message" placeholder="Start typing..." required=""></textarea>
+                        </fieldset>
+
+
+                        <fieldset>
+                            <button type="submit" id="form-submit" class="main-button-icon">Make A
+                                Reservation</button>
+                        </fieldset>
+
                 </div>
+                </form>
             </div>
+
         </div>
+    </div>
+    </div>
     </div>
 </section>
 <!-- ***** Reservation Area Ends ***** -->

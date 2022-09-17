@@ -51,40 +51,53 @@
 
                     <div class="flex border-2 border-accent bg-accent rounded-b p-4">
                         <div
-                            class="flex flex-1 flex-col justify-between bg-ui-dark-glow rounded border border-slate-300 text-ui-dark p-2 text-center">
+                            class="flex flex-1 flex-col justify-between bg-ui-dark-glow rounded border border-slate-300 text-ui-dark p-2">
                             <table id="menu_items" class="bg-ui-dark-glow text-white text-lg rounded-lg shadow">
 
                                 <thead class=" border-b-2 border-white">
-                                    <th class="p-4 border-b-2 border-accent-fade">Name</th>
-                                    <th class="p-4 border-b-2 border-accent-fade">Guest No.</th>
-                                    <th class="p-4 border-b-2 border-accent-fade">Date</th>
-                                    <th class="p-4 border-b-2 border-accent-fade">Time</th>
-                                    <th class="p-4 border-b-2 border-accent-fade">More Info</th>
-                                    <th class="p-4 border-b-2 border-accent-fade">Actions</th>
+                                    <th class="py-4 border-b-2 border-accent-fade pl-2">First Name</th>
+                                    <th class="py-4 border-b-2 border-accent-fade">Guest No.</th>
+                                    <th class="py-4 border-b-2 border-accent-fade">Date</th>
+                                    <th class="py-4 border-b-2 border-accent-fade">Time</th>
+                                    <th class="py-4 border-b-2 border-accent-fade">Status</th>
+                                    <th class="py-4 border-b-2 border-accent-fade">More Info</th>
+                                    <th class="py-4 border-b-2 border-accent-fade">Actions</th>
                                 </thead>
                                 <tbody>
 
                                     @foreach ($reservations as $reservation)
                                         <tr class="mx-4">
-                                            <td class="trow my-1 text-lg">{{ $reservation->name }}</td>
-                                            {{-- <td class="trow my-1 text-lg">{{ $reservations->email }}</td>
-                                <td class="trow my-1 text-lg">{{ $reservations->phone }}</td> --}}
-                                            <td class="trow my-1 text-lg">{{ $reservation->guest_count }}</td>
+                                            <td class="trow my-1 text-lg p-2">{{ $reservation->first_name }}</td>
+                                            <td class="trow my-1 text-lg ">{{ $reservation->guest_count }}</td>
                                             <td class="trow my-1 text-lg">
                                                 {{ \Carbon\Carbon::parse($reservation->date)->format('D, d M Y') }}
                                             </td>
                                             <td class="trow my-1 text-lg">
                                                 {{ \Carbon\Carbon::parse($reservation->time)->format('m:Ha') }}
                                             </td>
-                                            {{-- <td class="trow my-1 text-lg">{{ $reservations->message }}</td>
-                                <td class="trow my-1 text-lg">{{ $reservations->created_at }}</td>
-                                <td class="trow my-1 text-lg">{{ $reservations->updated_at }}</td> --}}
+                                            <td class="trow my-1 text-lg">
+                                                @if (is_null($reservation->confirmed))
+                                                    <div class="flex gap-1 text-blue-500 text-sm">
+                                                        Awaiting
+                                                        <x-lucide-megaphone class="w-4 text-white" />
+                                                    </div>
+                                                @elseif ($reservation->confirmed == true)
+                                                    <div class="flex gap-1 text-green-500 text-sm">Confirmed
+                                                        <x-lucide-check class="w-4 text-white" />
+                                                    </div>
+                                                @elseif ($reservation->confirmed == 'declined')
+                                                    <div class="flex gap-1 text-red-500 text-sm">Declined
+                                                        <x-lucide-x class="w-4 text-white" />
+                                                    </div>
+                                                @endif
+                                            </td>
                                             <td class="trow my-1 text-lg">
                                                 <form class="contents" method="post"
                                                     action="{{ url('reservation', $reservation->id) }}">
                                                     @method('get')
                                                     @csrf
-                                                    <button type="submit" class="btn btn-accent py-1">View
+                                                    <button type="submit"
+                                                        class="btn btn-accent py-1 align-baseline">View
                                                     </button>
                                                 </form>
                                             </td>
