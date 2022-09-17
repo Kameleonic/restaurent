@@ -77,21 +77,32 @@
                                             </td>
                                             <td class="trow my-1 text-lg">
                                                 @if (is_null($reservation->confirmed))
-                                                    <div class="flex gap-1 text-blue-500 text-sm">
-                                                        Awaiting
-                                                        <x-lucide-megaphone class="w-4 text-white" />
+                                                    <div class="flex gap-1 text-blue-400 text-sm ">
+                                                        <div style="padding-top: 2px; padding-bottom: 2px;"
+                                                            class="flex px-2 rounded-md border-2 lg:w-[110px] justify-content-center border-blue-300 shadow-md font-semibold bg-slate-600">
+                                                            Awaiting
+                                                            <x-lucide-megaphone class="w-5 h-5 text-blue-400 " />
+                                                        </div>
                                                     </div>
-                                                @elseif ($reservation->confirmed == true)
-                                                    <div class="flex gap-1 text-green-500 text-sm">Confirmed
-                                                        <x-lucide-check class="w-4 text-white" />
+                                                @elseif ($reservation->confirmed == 'confirmed')
+                                                    <div class="flex gap-1 text-green-400 text-sm">
+                                                        <div style="padding-top: 2px; padding-bottom: 2px;"
+                                                            class="flex px-2 rounded-md border-2 lg:w-[110px] justify-content-center border-green-300 shadow-md font-semibold bg-slate-600">
+                                                            Confirmed
+                                                            <x-lucide-check class="w-5 h-5 text-green-400" />
+                                                        </div>
                                                     </div>
                                                 @elseif ($reservation->confirmed == 'declined')
-                                                    <div class="flex gap-1 text-red-500 text-sm">Declined
-                                                        <x-lucide-x class="w-4 text-white" />
-                                                    </div>
+                                                    <div class="flex gap-1 text-red-400 text-sm">
+                                                        <div style="padding-top: 2px; padding-bottom: 2px;"
+                                                            class="flex px-2 rounded-md border-2 lg:w-[110px] justify-content-center border-red-300 shadow-md font-semibold bg-slate-600">
+                                                            Declined
+                                                            <x-lucide-x class="w-5 h-5 text-red-400" />
+                                                        </div>
                                                 @endif
                                             </td>
                                             <td class="trow my-1 text-lg">
+
                                                 <form class="contents" method="post"
                                                     action="{{ url('reservation', $reservation->id) }}">
                                                     @method('get')
@@ -101,26 +112,42 @@
                                                     </button>
                                                 </form>
                                             </td>
-                                            <td class="trow my-1 w-10 text-lg">
-                                                <div class="flex flex-row justify-content-evenly">
-                                                    <form class="contents" method="post"
-                                                        action="{{ url('confirm-reservation', $reservation->id) }}">
-                                                        @method('post')
-                                                        @csrf
-                                                        <button type="submit" class="">
-                                                            <x-lucide-x-circle
-                                                                class="rounded-full w-4 h-4 bg-red-300 text-red-900" />
-                                                    </form>
+                                            <td class="trow my-1 w-10 text-lg pt-2">
+                                                <div class="flex flex-row justify-content-evenly ">
+                                                    <div class="mx-1">
 
-                                                    <form class="contents" method="post"
-                                                        action="{{ url('decline-reservation', $reservation->id) }}">
-                                                        @method('post')
-                                                        @csrf
-                                                        <button type="submit" class="">
-                                                            <x-lucide-x-circle
-                                                                class="rounded-full w-4 h-4 bg-green-300 text-green-900" />
-                                                        </button>
-                                                    </form>
+
+                                                        <form class="contents" method="post"
+                                                            action="{{ url('confirm-reservation', $reservation->id) }}">
+                                                            @method('post')
+                                                            @csrf
+                                                            <button type="submit" class="">
+                                                                <x-lucide-check
+                                                                    class="rounded-full w-5 h-5 p-1 bg-green-300 text-green-900" />
+                                                        </form>
+                                                    </div>
+                                                    <div class="mx-1">
+
+                                                        <form class="contents" method="post"
+                                                            action="{{ url('awaiting-reservation', $reservation->id) }}">
+                                                            @method('post')
+                                                            @csrf
+                                                            <button type="submit" class="">
+                                                                <x-lucide-megaphone
+                                                                    class="rounded-full w-5 h-5 p-1 bg-blue-300 text-blue-900" />
+                                                        </form>
+                                                    </div>
+                                                    <div class="mx-1">
+                                                        <form class="contents" method="post"
+                                                            action="{{ url('decline-reservation', $reservation->id) }}">
+                                                            @method('post')
+                                                            @csrf
+                                                            <button type="submit" class="">
+                                                                <x-lucide-x
+                                                                    class="rounded-full w-5 h-5 p-1 bg-red-300 text-red-900" />
+                                                            </button>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </td>
                                         </tr>

@@ -55,5 +55,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get("/reservations", [ReservationController::class, 'viewReservations']);
 
     Route::get("/reservation/{id}", [ReservationController::class, 'reservationInfo']);
+    Route::post("/confirm-reservation/{id}", [ReservationController::class, 'confirmReservation']);
+    Route::post("/awaiting-reservation/{id}", [ReservationController::class, 'nullReservation']);
+    Route::post("/decline-reservation/{id}", [ReservationController::class, 'declineReservation']);
 });
 require __DIR__ . '/auth.php';
