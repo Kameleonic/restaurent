@@ -18,25 +18,34 @@
             <div class="flex flex-col">
                 <div class="flex-1">
                     <div
-                        class="flex flex-row justify-between border-t-2 mb-0 border-l-2 border-r-2 bg-accent border-accent rounded-t-md pl-4 pt-3">
-                        <div class="text-xl font-bold mt-1 mx-2  text-white">Reservation information.
+                        class="flex flex-row justify-between border-t-2 mb-0 border-l-2 border-r-2 bg-accent border-accent rounded-t-md pl-4 pt-3 pr-4">
+                        <div class="text-xxl font-bold mt-1 mx-2  text-white">Reservation information.
                         </div>
-                        <div class="bg-slate-200 rounded-lg shadow-md">
-                            @if (is_null($reservation->confirmed))
-                                <div class="flex gap-1 text-blue-500 text-sm">
+                        @if (is_null($reservation->confirmed))
+                            <div class="flex gap-1 text-blue-400 text-sm mt-2 mr-2">
+                                <div style="padding-top: 2px; padding-bottom: 2px;"
+                                    class="flex px-2 rounded-md border-2 lg:w-[110px] justify-content-center border-blue-300 shadow-md font-semibold bg-slate-600">
                                     Awaiting
-                                    <x-lucide-megaphone class="w-4 text-white" />
+                                    <x-lucide-megaphone class="w-5 h-5 text-blue-400 " />
                                 </div>
-                            @elseif ($reservation->confirmed == true)
-                                <div class="flex gap-1 text-green-500 text-sm">Confirmed
-                                    <x-lucide-check class="w-4 text-white" />
+                            </div>
+                        @elseif ($reservation->confirmed == 'confirmed')
+                            <div class="flex gap-1 text-green-400 text-sm mt-2 mr-2">
+                                <div style="padding-top: 2px; padding-bottom: 2px;"
+                                    class="flex px-2 rounded-md border-2 lg:w-[110px] justify-content-center border-green-300 shadow-md font-semibold bg-slate-600">
+                                    Confirmed
+                                    <x-lucide-check class="w-5 h-5 text-green-400" />
                                 </div>
-                            @elseif ($reservation->confirmed == 'declined')
-                                <div class="flex gap-1 text-red-500 text-sm">Declined
-                                    <x-lucide-x class="w-4 text-white" />
+                            </div>
+                        @elseif ($reservation->confirmed == 'declined')
+                            <div class="flex gap-1 text-red-400 text-sm mt-2 mr-2">
+                                <div style="padding-top: 2px; padding-bottom: 2px;"
+                                    class="flex px-2 rounded-md border-2 lg:w-[110px] justify-content-center border-red-300 shadow-md font-semibold bg-slate-600">
+                                    Declined
+                                    <x-lucide-x class="w-5 h-5 text-red-400" />
                                 </div>
-                            @endif
-                        </div>
+                            </div>
+                        @endif
                     </div>
 
 

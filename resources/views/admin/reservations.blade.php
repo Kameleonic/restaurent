@@ -40,7 +40,7 @@
                 <div class="flex-1">
                     <div
                         class="flex flex-row justify-between border-t-2 mb-0 border-l-2 border-r-2 bg-accent border-accent rounded-t-md pl-4 pt-3">
-                        <div class="text-xl font-bold mt-1 mx-2  text-white">Reservations waiting to be confirmed.
+                        <div class="text-xxl font-bold mt-1 mx-2  text-white">Reservations waiting to be confirmed.
                         </div>
                         <button type="button" class="mr-5 text-white hover:text-white-50" data-bs-toggle="modal"
                             data-bs-target="#modelId" aria-label="Close">
@@ -54,14 +54,28 @@
                             class="flex flex-1 flex-col justify-between bg-ui-dark-glow rounded border border-slate-300 text-ui-dark p-2">
                             <table id="menu_items" class="bg-ui-dark-glow text-white text-lg rounded-lg shadow">
 
-                                <thead class=" border-b-2 border-white">
-                                    <th class="py-4 border-b-2 border-accent-fade pl-2">First Name</th>
-                                    <th class="py-4 border-b-2 border-accent-fade">Guest No.</th>
-                                    <th class="py-4 border-b-2 border-accent-fade">Date</th>
-                                    <th class="py-4 border-b-2 border-accent-fade">Time</th>
-                                    <th class="py-4 border-b-2 border-accent-fade">Status</th>
-                                    <th class="py-4 border-b-2 border-accent-fade">More Info</th>
-                                    <th class="py-4 border-b-2 border-accent-fade">Actions</th>
+                                <thead class=" border-b-2 border-accentfade">
+                                    <th class="py-4 border-b-2 font-bold pl-2">
+                                        <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">First Name</div>
+                                    </th>
+                                    <th class="py-4 border-b-2  font-bold border-accentfade">
+                                        <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">No. of Guests</div>
+                                    </th>
+                                    <th class="py-4 border-b-2 font-bold border-accentfade">
+                                        <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">Date</div>
+                                    </th>
+                                    <th class="py-4 border-b-2 font-bold border-accentfade">
+                                        <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">Time</div>
+                                    </th>
+                                    <th class="py-4 border-b-2 font-bold border-accentfade">
+                                        <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">Status</div>
+                                    </th>
+                                    <th class="py-4 border-b-2 font-bold border-accentfade">
+                                        <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">More Info</div>
+                                    </th>
+                                    <th class="py-4 border-b-2 font-bold border-accentfade">
+                                        <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">Actions</div>
+                                    </th>
                                 </thead>
                                 <tbody>
 
