@@ -1,3 +1,7 @@
+/* // DataTables */
+@import "~datatables.net-bs4/css/dataTables.css";
+@import "~datatables.net-buttons-bs4/css/buttons.css";
+
 /* BEGIN - Root variables */
 :root {
     --accent: #fb5849;
@@ -179,6 +183,11 @@
 
 /* BEGIN - DataTables - Styling */
 
+.dataTables_wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+}
 
 .dataTables_wrapper .dataTables_filter input {
     margin-right: 1.25rem;
@@ -201,8 +210,35 @@
     -webkit-print-color-adjust: exact;
     color-adjust: white;
 }
+
+.dataTables_info {
+    color: var(--accent);
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
 .dataTables_wrapper .dataTables_length select {
     min-width: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    text-align: end;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: var(--accent) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: var(--accent-fade) !important;
+    margin: 0.25rem 0.5rem;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    color: var(--accent) !important;
 }
 
 th {

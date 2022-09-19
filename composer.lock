@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d8b06b4a89f554d764876af91faf87b4",
+    "content-hash": "55ea36532739879b672657ba94242c2b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -320,6 +320,55 @@
             "time": "2021-08-15T20:50:18+00:00"
         },
         {
+            "name": "components/jquery",
+            "version": "3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jquery.git",
+                "reference": "6cf38ee1fd04b6adf8e7dda161283aa35be818c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jquery/zipball/6cf38ee1fd04b6adf8e7dda161283aa35be818c3",
+                "reference": "6cf38ee1fd04b6adf8e7dda161283aa35be818c3",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ],
+                    "files": [
+                        "jquery.min.js",
+                        "jquery.min.map",
+                        "jquery.slim.js",
+                        "jquery.slim.min.js",
+                        "jquery.slim.min.map"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JS Foundation and other contributors"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "support": {
+                "forum": "http://forum.jquery.com",
+                "irc": "irc://irc.freenode.org/jquery",
+                "issues": "https://github.com/jquery/jquery/issues",
+                "source": "https://github.com/jquery/jquery",
+                "wiki": "http://docs.jquery.com/"
+            },
+            "time": "2021-03-20T19:13:42+00:00"
+        },
+        {
             "name": "dasprid/enum",
             "version": "1.0.3",
             "source": {
@@ -365,6 +414,90 @@
                 "source": "https://github.com/DASPRiD/Enum/tree/1.0.3"
             },
             "time": "2020-10-02T16:03:48+00:00"
+        },
+        {
+            "name": "datatables.net/datatables.net",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Dist-DataTables.git",
+                "reference": "d73e14d13774e5104c5f7f2703026d97a9c7a840"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Dist-DataTables/zipball/d73e14d13774e5104c5f7f2703026d97a9c7a840",
+                "reference": "d73e14d13774e5104c5f7f2703026d97a9c7a840",
+                "shasum": ""
+            },
+            "require": {
+                "components/jquery": ">=1.7"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table. This is jQuery DataTables",
+            "homepage": "http://www.datatables.net/",
+            "keywords": [
+                "datatables",
+                "jquery",
+                "table"
+            ],
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "source": "https://github.com/DataTables/Dist-DataTables"
+            },
+            "time": "2022-09-13T18:30:30+00:00"
+        },
+        {
+            "name": "datatables.net/datatables.net-dt",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Dist-DataTables-DataTables.git",
+                "reference": "01aa50d1d547264c622557a84c66f259f8ca5b9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Dist-DataTables-DataTables/zipball/01aa50d1d547264c622557a84c66f259f8ca5b9a",
+                "reference": "01aa50d1d547264c622557a84c66f259f8ca5b9a",
+                "shasum": ""
+            },
+            "require": {
+                "datatables.net/datatables.net": ">=1.10.15"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SpryMedia",
+                    "homepage": "https://datatables.net"
+                }
+            ],
+            "description": "DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table. This is DataTables with styling for [DataTables](https://datatables.net/)",
+            "homepage": "http://www.datatables.net/",
+            "keywords": [
+                "datatables",
+                "jquery",
+                "table"
+            ],
+            "support": {
+                "forum": "https://datatables.net/forums",
+                "source": "https://github.com/DataTables/Dist-DataTables-DataTables"
+            },
+            "time": "2022-03-31T11:00:38+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -2961,6 +3094,58 @@
                 "source": "https://github.com/paragonie/constant_time_encoding"
             },
             "time": "2022-06-14T06:56:20+00:00"
+        },
+        {
+            "name": "pdfmake/pdfmake",
+            "version": "v0.1.31",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pdfmake/pdfmake.git",
+                "reference": "ae8b61019c50a5c39881f30d49d5f03d90bd3a78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pdfmake/pdfmake/zipball/ae8b61019c50a5c39881f30d49d5f03d90bd3a78",
+                "reference": "ae8b61019c50a5c39881f30d49d5f03d90bd3a78",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thiago Pereira Rosa",
+                    "email": "thiagor@engineer.com",
+                    "homepage": "http://coderi.com.br",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Bartek Pampuch",
+                    "email": "bpampuch@pdfmake.org",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Vasiliy Solovey",
+                    "email": "miltador@yandex.ua",
+                    "homepage": "http://miltador.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Client/server side PDF printing in pure JavaScript",
+            "homepage": "http://pdfmake.github.io",
+            "keywords": [
+                "javascript",
+                "pdf",
+                "pdfmake"
+            ],
+            "support": {
+                "issues": "https://github.com/pdfmake/pdfmake/issues",
+                "source": "https://github.com/pdfmake/pdfmake/tree/master"
+            },
+            "abandoned": true,
+            "time": "2016-09-21T17:29:57+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -8568,7 +8753,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "datatables.net/datatables.net-dt": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

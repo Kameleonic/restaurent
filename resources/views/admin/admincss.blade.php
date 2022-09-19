@@ -16,10 +16,10 @@
 <!-- inject:css -->
 <!-- endinject -->
 <!-- Layout styles -->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css" defer />
+{{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css" defer /> --}}
 <link rel="stylesheet" href="/admin/assets/css/style.css">
 <link rel="stylesheet" href="/admin/assets/css/custom.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
 <!-- End layout styles -->
 <link rel="shortcut icon" href="/admin/assets/images/favicon.png" />

@@ -37,7 +37,7 @@
     <div class="dash-page">
         <div class="mx-10 my-20">
             <div class="flex flex-col">
-                <div class="flex-1">
+                <div class="flex-1 mx-4 ">
                     <div
                         class="flex flex-row justify-between border-t-2 mb-0 border-l-2 border-r-2 bg-accent border-accent rounded-t-md pl-4 pt-3">
                         <div class="text-xxl font-bold mt-1 mx-2  text-white">Reservations waiting to be confirmed.
@@ -51,30 +51,30 @@
 
                     <div class="flex flex-col border-2 border-accent bg-accent rounded-b p-4">
                         <div
-                            class="flex flex-1 flex-col justify-between bg-ui-dark-glow rounded border border-slate-300 text-ui-dark">
+                            class="flex flex-1 flex-col justify-between bg-ui-dark-glow rounded border border-slate-300 text-ui-dark px-4">
                             <table id="reservationItemTable"
                                 class="bg-ui-dark-glow border-4 border-slate-800 rounded-lg shadow text-lg text-white">
 
                                 <thead class=" border-b-2 bg-slate-800 border-accentfade">
-                                    <th class="py-4 border-b-2 font-bold pl-2">
+                                    <th class="border-b-2 font-bold pl-2">
                                         <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">First Name</div>
                                     </th>
-                                    <th class="py-4 border-b-2  font-bold border-accentfade">
+                                    <th class="border-b-2  font-bold border-accentfade">
                                         <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">No. of Guests</div>
                                     </th>
-                                    <th class="py-4 border-b-2 font-bold border-accentfade">
+                                    <th class="border-b-2 font-bold border-accentfade">
                                         <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">Date</div>
                                     </th>
-                                    <th class="py-4 border-b-2 font-bold border-accentfade">
+                                    <th class="border-b-2 font-bold border-accentfade">
                                         <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">Time</div>
                                     </th>
-                                    <th class="py-4 border-b-2 font-bold border-accentfade">
+                                    <th class="border-b-2 font-bold border-accentfade">
                                         <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">Status</div>
                                     </th>
-                                    <th class="py-4 border-b-2 font-bold border-accentfade">
+                                    <th class="border-b-2 font-bold border-accentfade">
                                         <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">More Info</div>
                                     </th>
-                                    <th class="py-4 border-b-2 font-bold border-accentfade">
+                                    <th class="border-b-2 font-bold border-accentfade">
                                         <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">Actions</div>
                                     </th>
                                 </thead>
