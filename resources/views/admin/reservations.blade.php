@@ -7,35 +7,35 @@
 </head>
 
 <body>
+    @include('admin.navbar')
 
-    <div class="container-scroller">
-        <!-- Modal -->
-        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Body
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save</button>
-                    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Body
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
                 </div>
             </div>
         </div>
-        @include('admin.navbar')
-        <!-- main-panel ends -->
-        <!-- Modal -->
+    </div>
 
+    <!-- main-panel ends -->
+    <!-- Modal -->
 
-        <div class="mx-auto w-3/4 pl-lg-3" style="position: relative; top: 60px;">
+    <div class="dash-page">
+        <div class="mx-10 my-20">
             <div class="flex flex-col">
                 <div class="flex-1">
                     <div
@@ -49,12 +49,13 @@
                     </div>
 
 
-                    <div class="flex border-2 border-accent bg-accent rounded-b p-4">
+                    <div class="flex flex-col border-2 border-accent bg-accent rounded-b p-4">
                         <div
-                            class="flex flex-1 flex-col justify-between bg-ui-dark-glow rounded border border-slate-300 text-ui-dark p-2">
-                            <table id="menu_items" class="bg-ui-dark-glow text-white text-lg rounded-lg shadow">
+                            class="flex flex-1 flex-col justify-between bg-ui-dark-glow rounded border border-slate-300 text-ui-dark">
+                            <table id="reservationItemTable"
+                                class="bg-ui-dark-glow border-4 border-slate-800 rounded-lg shadow text-lg text-white">
 
-                                <thead class=" border-b-2 border-accentfade">
+                                <thead class=" border-b-2 bg-slate-800 border-accentfade">
                                     <th class="py-4 border-b-2 font-bold pl-2">
                                         <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">First Name</div>
                                     </th>
@@ -91,27 +92,27 @@
                                             </td>
                                             <td class="trow my-1 text-lg">
                                                 @if (is_null($reservation->confirmed))
-                                                    <div class="flex gap-1 text-blue-400 text-sm ">
+                                                    <div class="flex gap-1 text-blue-400 text-xs ">
                                                         <div style="padding-top: 2px; padding-bottom: 2px;"
-                                                            class="flex px-2 rounded-md border-2 lg:w-[110px] justify-content-center border-blue-300 shadow-md font-semibold bg-slate-600">
+                                                            class="flex px-1 rounded-md border-2 lg:w-[110px] justify-content-center border-blue-300 shadow-md font-semibold bg-slate-600">
                                                             Awaiting
-                                                            <x-lucide-megaphone class="w-5 h-5 text-blue-400 " />
+                                                            <x-lucide-megaphone class="w-3 h-3 text-blue-400 " />
                                                         </div>
                                                     </div>
                                                 @elseif ($reservation->confirmed == 'confirmed')
-                                                    <div class="flex gap-1 text-green-400 text-sm">
+                                                    <div class="flex gap-1 text-green-400 text-xs">
                                                         <div style="padding-top: 2px; padding-bottom: 2px;"
-                                                            class="flex px-2 rounded-md border-2 lg:w-[110px] justify-content-center border-green-300 shadow-md font-semibold bg-slate-600">
+                                                            class="rounded-md lg:w-[110px] border-green-300 shadow-md table-badge">
                                                             Confirmed
-                                                            <x-lucide-check class="w-5 h-5 text-green-400" />
+                                                            <x-lucide-check class="w-3 h-3 text-green-400" />
                                                         </div>
                                                     </div>
                                                 @elseif ($reservation->confirmed == 'declined')
-                                                    <div class="flex gap-1 text-red-400 text-sm">
+                                                    <div class="flex gap-1 text-red-400 text-xs">
                                                         <div style="padding-top: 2px; padding-bottom: 2px;"
-                                                            class="flex px-2 rounded-md border-2 lg:w-[110px] justify-content-center border-red-300 shadow-md font-semibold bg-slate-600">
+                                                            class="flex px-1 rounded-md border-2 lg:w-[110px] justify-content-center border-red-300 shadow-md font-semibold bg-slate-600">
                                                             Declined
-                                                            <x-lucide-x class="w-5 h-5 text-red-400" />
+                                                            <x-lucide-x class="w-3 h-3 text-red-400" />
                                                         </div>
                                                 @endif
                                             </td>
@@ -173,25 +174,24 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Button trigger modal -->
-        <!-- Button trigger modal -->
-
-
-
+    <!-- Button trigger modal -->
+    <!-- Button trigger modal -->
 
 
 
-        <script>
-            $('#viewReservationModal').on('show.bs.modal', event => {
-                var button = $(event.relatedTarget);
-                var modal = $(this);
-                // Use above variables to manipulate the DOM
 
-            });
-        </script>
-        <!-- container-scroller -->
-        @include('admin.adminscripts')
+
+
+    <script>
+        $('#viewReservationModal').on('show.bs.modal', event => {
+            var button = $(event.relatedTarget);
+            var modal = $(this);
+            // Use above variables to manipulate the DOM
+
+        });
+    </script>
+    <!-- container-scroller -->
+    @include('admin.adminscripts')
 </body>
-
-</html>

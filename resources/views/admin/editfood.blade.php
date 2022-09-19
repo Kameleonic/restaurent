@@ -2,24 +2,18 @@
 
 </x-app-layout>
 
-<!DOCTYPE html>
-<html lang="en">
-
-{{-- Styling --}}
-<style>
-
-</style>
 
 <head>
     @include('admin.admincss')
 </head>
 
 <body>
-    <div class="container-scroller">
-        @include('admin.navbar')
 
-        <!-- main-panel ends -->
-        <div class="">
+    @include('admin.navbar')
+
+    <!-- main-panel ends -->
+    <div class="dash-page">
+        <div class="my-20 w-1/3 mx-10">
 
             <form enctype="multipart/form-data" action="{{ url('/update', $data->id) }}"
                 class="mt-10 mx-auto border-2 border-accent rounded-xl" method="POST">
@@ -61,6 +55,7 @@
             </form>
         </div>
     </div>
+
     <!-- container-scroller -->
     @include('admin.adminscripts')
 

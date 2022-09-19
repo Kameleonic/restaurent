@@ -31,18 +31,66 @@
 <!-- endinject -->
 <!-- Custom js for this page -->
 <script src="admin/assets/js/dashboard.js"></script>
-{{-- <script>
+
+<!-- BEGIN - Food Menu Items DataTable -->
+<script>
     $(document).ready(function() {
-        $('#menu_items').DataTable({
+        $('#foodItemsTable').DataTable({
+
+            pageLength: 10,
+            language: {
+                oPaginate: {
+                    sNext: '<i class="fa fa-forward"></i>',
+                    sPrevious: '<i class="fa fa-backward"></i>',
+                    sFirst: '<i class="fa fa-step-backward"></i>',
+                    sLast: '<i class="fa fa-step-forward"></i>'
+                }
+            },
             columnDefs: [{
                 targets: 2,
                 render: function(data, type, row) {
                     return data.substr(0, 42) + '…'
                 }
-            }]
+            }],
         });
-    }); --}}
+    });
 </script>
+<!-- END - Food Menu Items DataTable -->
+
+<!-- BEGIN - Reservation DataTable -->
+<script>
+    $(document).ready(function() {
+        $('#reservationItemTable').DataTable({
+
+            pageLength: 10,
+            language: {
+                oPaginate: {
+                    sNext: '<i class="fa fa-forward"></i>',
+                    sPrevious: '<i class="fa fa-backward"></i>',
+                    sFirst: '<i class="fa fa-step-backward"></i>',
+                    sLast: '<i class="fa fa-step-forward"></i>'
+                }
+            }
+        });
+    });
+</script>
+<!-- END - Reservation DataTable -->
+
+{{-- <script>
+    $(document).ready(function() {
+        $('#foodItemsTable').DataTable({
+            pageLength: 5,
+            language: {
+                oPaginate: {
+                    sNext: '<i class="fa fa-forward"></i>',
+                    sPrevious: '<i class="fa fa-backward"></i>',
+                    sFirst: '<i class="fa fa-step-backward"></i>',
+                    sLast: '<i class="fa fa-step-forward"></i>'
+                }
+            }
+        })
+    });
+</script> --}}
 <script>
     $('input#submit').click(function(e) {
         e.preventDefault();

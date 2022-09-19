@@ -5,7 +5,10 @@
     --default-dashboard-text: #eaeaea;
     --ui-dark: #0f1015;
     --ui-dark-glow: #2d303f;
+  }
 
+  .dash-page {
+    margin-left: 240px;
   }
 
   .required:after {
@@ -26,6 +29,63 @@
   .placeholder {
     color: rgba(46, 46, 46, 0.415)!important;
   }
+
+  /* BEGIN - Custom Dashboard UI */
+
+  .sidebar .nav .nav-item .nav-link .menu-title {
+    color: var(--accent-fade);
+    font-weight: 400;
+
+  }
+
+  .sidebar .nav:not(.sub-menu) > .nav-item:hover:not(.nav-category):not(.active) > .nav-link {
+    background-color: transparent!important;
+    color: var(--accent);
+    font-weight: 600;
+
+  }
+  .sidebar .nav .nav-item:hover > .nav-link .menu-title {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .sidebar .nav .nav-item.active > .nav-link .menu-title {
+    background-color: var(--ui-dark);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .sidebar .nav .nav-item.active .menu-icon i {
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+    font-size: 1.35rem;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0 !important;
+    min-height: 100%;
+    border-right-width: 4px;
+    border-color: var(--accent);
+    background-color: #16171e;
+    background-image: linear-gradient(43deg, #16171e 0%, #272431 46%, #3a3a49 100%);
+
+  }
+
+  .table-badge {
+    display: flex;
+    justify-content: center;
+    border-width: 2px;
+    border-style: solid;
+    font-weight: 600;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
+    background-color: rgb(71 85 105);
+  }
+
+  /* END - Custom Dashboard UI */
+
 
   /* END - Root variables */
 
@@ -119,16 +179,30 @@
 
 /* BEGIN - DataTables - Styling */
 
-.dataTable {
-    border: 2px solid var(--accent)!important;
-}
 
 .dataTables_wrapper .dataTables_filter input {
+    margin-right: 1.25rem;
+    color: var(--default-dashboard-text);
     border-color: var(--accent-fade);
 }
 
 .dataTables_wrapper .dataTables_length select {
+    margin-left: 1.25rem;
+    color: var(--default-dashboard-text);
     border-color: var(--accent-fade);
+}
+
+.dataTables_wrapper select {
+    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='#6b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e);
+    background-position: right 0.25rem center !important;
+    background-repeat: no-repeat;
+    background-size: 3.5em 3.5em !important;
+    padding-right: 2.5rem;
+    -webkit-print-color-adjust: exact;
+    color-adjust: white;
+}
+.dataTables_wrapper .dataTables_length select {
+    min-width: 10px;
 }
 
 th {
