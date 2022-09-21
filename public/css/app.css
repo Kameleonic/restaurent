@@ -739,6 +739,12 @@ select {
 .right-\[-60px\] {
   right: -60px;
 }
+.right-\[-46px\] {
+  right: -46px;
+}
+.top-\[10px\] {
+  top: 10px;
+}
 .z-0 {
   z-index: 0;
 }
@@ -1144,6 +1150,9 @@ select {
 }
 .border-2 {
   border-width: 2px;
+}
+.border-3 {
+  border-width: 3px;
 }
 .border-4 {
   border-width: 4px;

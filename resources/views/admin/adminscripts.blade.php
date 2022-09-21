@@ -58,10 +58,11 @@
 <!-- END - Food Menu Items DataTable -->
 
 <!-- BEGIN - Reservation DataTable -->
+
 <script>
     $(document).ready(function() {
         $('#reservationItemTable').DataTable({
-
+            pagingType: 'simple',
             pageLength: 10,
             language: {
                 oPaginate: {
@@ -71,6 +72,14 @@
                     sLast: '<i class="fa fa-step-forward"></i>'
                 }
             }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#toggleNavBtn').click(function() {
+            $('#sidebar').toggleClass('hide-sidebar');
+            $('#sidebar').toggleClass('hide-sidebar');
         });
     });
 </script>

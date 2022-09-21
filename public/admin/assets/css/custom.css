@@ -75,6 +75,13 @@
 
   }
 
+  .hide-sidebar {
+    width: 0;
+    transition-duration: 350ms;
+    transition-timing-function: ease-in-out;
+
+  }
+
   .table-badge {
     display: flex;
     justify-content: center;
