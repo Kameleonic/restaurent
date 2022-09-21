@@ -12,7 +12,7 @@
     @include('admin.navbar')
 
     <!-- main-panel ends -->
-    <div class="dash-page">
+    <div class="page ml">
         <div class="my-20 w-1/3 mx-10">
 
             <form enctype="multipart/form-data" action="{{ url('/update', $data->id) }}"

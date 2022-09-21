@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    @include('admin.navbar')
 
     <div class="container-scroller">
 
@@ -62,9 +63,9 @@
         </div>
         <!-- END- Add Food Item Modal -->
 
-        @include('admin.navbar')
+
         <!-- main-panel ends -->
-        <div class="dash-page">
+        <div class="page ml">
             <div class="my-20 mx-10">
                 <div class="flex flex-col">
                     <div class="flex-1">

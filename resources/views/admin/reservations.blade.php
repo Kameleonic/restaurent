@@ -34,7 +34,7 @@
     <!-- main-panel ends -->
     <!-- Modal -->
 
-    <div class="dash-page">
+    <div class="page ml">
         <div class="mx-10 my-20">
             <div class="flex flex-col">
                 <div class="flex-1 mx-4 ">

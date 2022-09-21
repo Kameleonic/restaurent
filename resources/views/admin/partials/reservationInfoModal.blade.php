@@ -7,14 +7,14 @@
 
 <body>
 
+    @include('admin.navbar')
 
 
-    <div class="container-scroller">
-        @include('admin.navbar')
-        <!-- main-panel ends -->
-        <!-- Modal -->
+    <!-- main-panel ends -->
+    <!-- Modal -->
+    <div class="page ml">
 
-        <div class="mx-auto w-3/4 pl-lg-3" style="position: relative; top: 60px;">
+        <div class="mx-auto my-5 w-3/4 pl-lg-3">
             <div class="flex flex-col">
                 <div class="flex-1">
                     <div
@@ -139,7 +139,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 

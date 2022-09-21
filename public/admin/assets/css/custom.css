@@ -11,8 +11,20 @@
     --ui-dark-glow: #2d303f;
   }
 
-  .dash-page {
+  .page {
+    height: 100vh;
+  }
+
+  .ml {
+    transition-duration: 350ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     margin-left: 240px;
+  }
+
+  .no-ml {
+    transition-duration: 350ms;
+    transition-timing-function: ease-in-out;
+    margin-left: 0;
   }
 
   .required:after {
@@ -20,6 +32,7 @@
     color: red;
     padding-left: 0;
   }
+
   input::placeholder {
     color: rgba(46, 46, 46, 0.415)!important;
 
@@ -30,6 +43,7 @@
   select option:first{
     color: rgba(46, 46, 46, 0.415)!important;
   }
+
   .placeholder {
     color: rgba(46, 46, 46, 0.415)!important;
   }

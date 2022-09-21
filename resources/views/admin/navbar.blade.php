@@ -9,8 +9,10 @@
             </div>
         </button>
 
-        <li class="nav-item nav-category">
-            <span class="nav-link">Navigation</span>
+        <li class="nav-item nav-category border-t-2 border-b-2 bg-ui-dark mb-2">
+            <span class="flex gap-2 text-xxl align-items-center text-white">
+                <x-lucide-shield-alert class="w-10 h-10" />Admin Panel
+            </span>
         </li>
         <li class="nav-item menu-items">
             <a class="nav-link" href="{{ url('/users') }}">

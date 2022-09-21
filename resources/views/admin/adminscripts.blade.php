@@ -79,7 +79,8 @@
     $(document).ready(function() {
         $('#toggleNavBtn').click(function() {
             $('#sidebar').toggleClass('hide-sidebar');
-            $('#sidebar').toggleClass('hide-sidebar');
+            $(".page").toggleClass('ml');
+            $(".page").toggleClass('no-ml');
         });
     });
 </script>
