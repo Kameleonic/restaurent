@@ -24,6 +24,8 @@ class CreateReservationsTable extends Migration
             $table->string('time')->nullable();
             $table->string('allergies')->nullable();
             $table->string('confirmed')->nullable();
+            $table->string('confirmed_date')->nullable();
+            $table->string('confirmed_time')->nullable();
             $table->text('message')->nullable();
             $table->timestamps();
         });

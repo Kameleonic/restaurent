@@ -77,6 +77,22 @@
 </script>
 <script>
     $(document).ready(function() {
+        $('#reservationsBookedForToday').DataTable({
+            pagingType: 'simple',
+            pageLength: 10,
+            language: {
+                oPaginate: {
+                    sNext: '<i class="fa fa-forward"></i>',
+                    sPrevious: '<i class="fa fa-backward"></i>',
+                    sFirst: '<i class="fa fa-step-backward"></i>',
+                    sLast: '<i class="fa fa-step-forward"></i>'
+                }
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
         $('#toggleNavBtn').click(function() {
             $('#sidebar').toggleClass('hide-sidebar');
             $(".page").toggleClass('ml');

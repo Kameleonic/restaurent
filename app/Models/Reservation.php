@@ -19,7 +19,10 @@ class Reservation extends Model
         'date',
         'time',
         'allergies',
-        'confirmed',
+        'confirmed_time',
+        'declined_time',
+        'confirmed_date',
+        'declined_date',
         'message',
     ];
 }

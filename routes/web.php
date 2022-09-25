@@ -38,6 +38,10 @@ Route::post("/reserve", [HomeController::class, 'reserve']);
 
 Route::group(['middleware' => ['auth']], function () {
 
+    Route::get('/reservations', [AdminController::class, 'index']);
+
+    Route::get('/reports/reservations-booked-for-today', [ReservationController::class, 'reservationsBookedForToday']);
+
     Route::get('/users', [AdminController::class, 'user']);
 
     Route::get('/foodmenu', [AdminController::class, 'foodmenu']);
@@ -52,7 +56,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
 
-    Route::get("/reservations", [ReservationController::class, 'viewReservations']);
+    // Route::get("/reservations", [ReservationController::class, 'viewReservations']);
 
     Route::get("/reservation/{id}", [ReservationController::class, 'reservationInfo']);
     Route::post("/confirm-reservation/{id}", [ReservationController::class, 'confirmReservation']);

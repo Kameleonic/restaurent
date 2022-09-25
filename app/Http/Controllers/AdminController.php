@@ -7,11 +7,41 @@ use App\Models\User;
 use App\Models\Food;
 use App\Models\Reservation;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Carbon;
 
 use function PHPUnit\Framework\isNull;
 
 class AdminController extends Controller
 {
+    public function index()
+    {
+        $reservations = Reservation::all();
+
+        $reservationsCount = Reservation::all()->count();
+
+        $todaysDate = Carbon::now()->toDateString();
+
+        $tomorrowsDate = Carbon::now()->addDay()->toDateString();
+
+        $reservationsConfirmed = Reservation::select('id')
+            ->where('confirmed', 'confirmed')
+            ->count();
+
+        $reservationsToday = Reservation::select('date')
+            ->where('date', $todaysDate)
+            ->count();
+
+        $reservationsTomorrow = Reservation::select('date')
+            ->whereDate('date', $tomorrowsDate)
+            ->count();
+
+        $reservationCount = Reservation::count();
+
+
+        // dd($reservationsTomorrow);
+
+        return view('admin.reservations', compact('reservations', 'reservationsCount', 'reservationsConfirmed', 'reservationsToday', 'reservationsTomorrow', 'todaysDate'));
+    }
 
     // Fetch all users for the Admin dashboard
     public function user()
@@ -28,8 +58,6 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
-
-
 
     /**
      * Delete a food menu entry.
@@ -122,6 +150,7 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
+
 
     // public function viewReservations()
     // {
