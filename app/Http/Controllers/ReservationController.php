@@ -20,7 +20,43 @@ class ReservationController extends Controller
     {
         $reservations = Reservation::all();
 
-        return view('admin.reservations', compact('reservations'));
+        $reservationsCount = Reservation::all()->count();
+
+        $todaysDate = Carbon::now()->toDateString();
+
+        $tomorrowsDate = Carbon::now()->addDay()->toDateString();
+
+        $reservationsConfirmed = Reservation::select('id')
+            ->where('confirmed', 'confirmed')
+            ->count();
+
+        $reservationsToday = Reservation::select('date')
+            ->where('date', $todaysDate)
+            ->count();
+
+        $reservationsTomorrow = Reservation::select('date')
+            ->whereDate('date', $tomorrowsDate)
+            ->count();
+
+        $reservationCount = Reservation::count();
+
+        $reservationsNeedConfirming = Reservation::select('reservations')
+            ->where('confirmed', NULL)
+            ->where('created_at', '>=', $todaysDate)
+            ->count();
+
+
+        // dd($reservationsNeedConfirming);
+
+        return view('admin.reservations', compact(
+            'reservations',
+            'reservationsCount',
+            'reservationsConfirmed',
+            'reservationsToday',
+            'reservationsTomorrow',
+            'todaysDate',
+            'reservationsNeedConfirming'
+        ));
     }
 
     public function reservationInfo($id)
@@ -106,5 +142,18 @@ class ReservationController extends Controller
             ->get();
 
         return view('admin.reports.booked-for-today', compact('data'));
+    }
+
+    public function reservationsNeedConfirming()
+    {
+        $todaysDate = Carbon::now()->toDateString();
+
+        $data = Reservation::select()
+            ->where('confirmed', NULL)
+            ->where('created_at', '>=', $todaysDate)
+            ->get();
+
+
+        return view('admin.reports.reservations-need-confirming', compact('data'));
     }
 }

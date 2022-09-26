@@ -535,6 +535,7 @@ module.exports = {
           6: 'repeat(6, minmax(0, 1fr))',
         },
         height: ({ theme }) => ({
+            none: '0',
           auto: 'auto',
           ...theme('spacing'),
           '1/2': '50%',

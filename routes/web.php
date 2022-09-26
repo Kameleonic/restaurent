@@ -38,29 +38,37 @@ Route::post("/reserve", [HomeController::class, 'reserve']);
 
 Route::group(['middleware' => ['auth']], function () {
 
-    Route::get('/reservations', [AdminController::class, 'index']);
+    Route::get('/portal/dashboard', [AdminController::class, 'portalHome']);
 
-    Route::get('/reports/reservations-booked-for-today', [ReservationController::class, 'reservationsBookedForToday']);
+    // BEGIN - Report Routes
+    Route::get('/portal/reports/reservations-booked-for-today', [ReservationController::class, 'reservationsBookedForToday']);
+    Route::get('/portal/reports/reservations-need-confirming', [ReservationController::class, 'reservationsNeedConfirming']);
+    // END - Report Routes
 
-    Route::get('/users', [AdminController::class, 'user']);
+    Route::get('/portal/foodmenu', [AdminController::class, 'foodmenu']);
 
-    Route::get('/foodmenu', [AdminController::class, 'foodmenu']);
+    Route::post("/portal/update/{id}", [AdminController::class, 'update']);
 
-    Route::post("/update/{id}", [AdminController::class, 'update']);
+    Route::post('/portal/create-menu-item', [AdminController::class, 'createMenuItem']);
 
-    Route::post('/create-menu-item', [AdminController::class, 'createMenuItem']);
+    Route::get('/portal/edit-item/{id}', [AdminController::class, 'editMenuItem']);
 
-    Route::get('/edit-item/{id}', [AdminController::class, 'editMenuItem']);
+    Route::get('/portal/delete-menu-item/{id}', [AdminController::class, 'deleteMenuItem']);
 
-    Route::get('/delete-menu-item/{id}', [AdminController::class, 'deleteMenuItem']);
+    Route::get('/portal/users', [AdminController::class, 'user']);
 
-    Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
+    Route::get('/portal/deleteuser/{id}', [AdminController::class, 'deleteuser']);
 
-    // Route::get("/reservations", [ReservationController::class, 'viewReservations']);
+    // BEGIN - Reservation Routes
+    Route::get('/portal/reservations', [ReservationController::class, 'viewReservations']);
 
-    Route::get("/reservation/{id}", [ReservationController::class, 'reservationInfo']);
-    Route::post("/confirm-reservation/{id}", [ReservationController::class, 'confirmReservation']);
-    Route::post("/awaiting-reservation/{id}", [ReservationController::class, 'nullReservation']);
-    Route::post("/decline-reservation/{id}", [ReservationController::class, 'declineReservation']);
+    Route::get("/portal/reservation/{id}", [ReservationController::class, 'reservationInfo']);
+
+    Route::post("/portal/confirm-reservation/{id}", [ReservationController::class, 'confirmReservation']);
+
+    Route::post("/portal/awaiting-reservation/{id}", [ReservationController::class, 'nullReservation']);
+
+    Route::post("/portal/decline-reservation/{id}", [ReservationController::class, 'declineReservation']);
+    // END - Reservation Routes
 });
 require __DIR__ . '/auth.php';

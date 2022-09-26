@@ -10,12 +10,14 @@
         </button>
 
         <li class="nav-item nav-category border-t-2 border-b-2 bg-ui-dark mb-2">
-            <span class="flex gap-2 text-xxl align-items-center text-white">
-                <x-lucide-shield-alert class="w-10 h-10" />Admin Panel
-            </span>
+            <a href="/portal/dashboard">
+                <span class="flex gap-2 text-xxl align-items-center text-white">
+                    <x-lucide-shield-alert class="w-8 h-8" />Portal Home
+                </span>
+            </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url('/users') }}">
+            <a class="nav-link" href="{{ url('/portal/users') }}">
                 <span class="menu-icon">
                     <i class="mdi mdi-speedometer"></i>
                 </span>
@@ -24,7 +26,7 @@
         </li>
 
         <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url('/foodmenu') }}">
+            <a class="nav-link" href="{{ url('/portal/foodmenu') }}">
                 <span class="menu-icon">
                     <i class="mdi mdi-playlist-play"></i>
                 </span>
@@ -40,7 +42,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url('/reservations') }}">
+            <a class="nav-link" href="{{ url('/portal/reservations') }}">
                 <span class="menu-icon">
                     <i class="mdi mdi-chart-bar"></i>
                 </span>

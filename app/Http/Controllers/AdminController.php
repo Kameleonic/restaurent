@@ -13,7 +13,8 @@ use function PHPUnit\Framework\isNull;
 
 class AdminController extends Controller
 {
-    public function index()
+
+    public function portalHome()
     {
         $reservations = Reservation::all();
 
@@ -40,7 +41,7 @@ class AdminController extends Controller
 
         // dd($reservationsTomorrow);
 
-        return view('admin.reservations', compact('reservations', 'reservationsCount', 'reservationsConfirmed', 'reservationsToday', 'reservationsTomorrow', 'todaysDate'));
+        return view('admin.dashboard', compact('reservations', 'reservationsCount', 'reservationsConfirmed', 'reservationsToday', 'reservationsTomorrow', 'todaysDate'));
     }
 
     // Fetch all users for the Admin dashboard
