@@ -1,8 +1,3 @@
-<!-- plugins:js -->
-{{-- <script src="assets/vendors/js/vendor.bundle.base.js"></script> --}}
-
-<!-- endinject -->
-<!-- Plugin js for this page -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
 </script>
@@ -11,26 +6,10 @@
 <script type="text/javascript"
     src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-html5-2.2.3/sb-1.3.4/sp-2.0.2/sl-1.4.0/datatables.min.js"
     defer></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
 </script>
 
-{{-- <script src="admin/assets/js/jquery.cookie.js" type="text/javascript"></script> --}}
-<!-- End plugin js for this page -->
-<!-- inject:js -->
-
-
-{{-- <script src="admin/assets/js/off-canvas.js"></script>
-<script src="admin/assets/js/hoverable-collapse.js"></script>
-<script src="admin/assets/js/misc.js"></script>
-<script src="admin/assets/js/settings.js"></script>
-<script src="admin/assets/js/todolist.js"></script>
-<!-- endinject -->
-<!-- Custom js for this page -->
-<script src="admin/assets/js/dashboard.js"></script> --}}
-
-<!-- BEGIN - Food Menu Items DataTable -->
 <script>
     $('#foodItemsTable').DataTable({
 
@@ -51,10 +30,6 @@
         }],
     });
 </script>
-<!-- END - Food Menu Items DataTable -->
-
-<!-- BEGIN - Reservation DataTable -->
-
 <script>
     $(document).ready(function() {
         $('#reservationItemTable').DataTable({
@@ -74,7 +49,9 @@
 <script>
     $(document).ready(function() {
         $('#reservationsTable').DataTable({
+            dom: 'Bfrltrp',
             pagingType: 'simple',
+            responsive: true,
             searching: false,
             pageLength: 10,
             language: {
@@ -87,10 +64,10 @@
             }
         });
         $('#reservationsTable_wrapper').addClass('col-span-12');
-        $('#reservationsTable_info').addClass('text-white');
+        $('#reservationsTable_info')
+            .addClass('text-white');
     });
 </script>
-
 <script>
     $(document).ready(function() {
         $('#reservationsBookedForToday').DataTable({
@@ -109,30 +86,24 @@
 </script>
 <script>
     $(document).ready(function() {
-        $('#toggleNavBtn').click(function() {
-            $('#sidebar').toggleClass('hide-sidebar');
+        if ($(window).width() < 940) {
+            $('#sidebar').toggleClass('offcanvas-start');
             $(".page").toggleClass('ml');
             $(".page").toggleClass('no-ml');
-        });
+            $('#toggleNavBtn').click(function() {
+                $('#sidebar').toggleClass('offcanvas-start');
+                $(".page").toggleClass('ml');
+                $(".page").toggleClass('no-ml');
+            });
+        } else {
+            $('#toggleNavBtn').click(function() {
+                $('#sidebar').toggleClass('offcanvas-start');
+                $(".page").toggleClass('ml');
+                $(".page").toggleClass('no-ml');
+            });
+        }
     });
 </script>
-<!-- END - Reservation DataTable -->
-
-{{-- <script>
-    $(document).ready(function() {
-        $('#foodItemsTable').DataTable({
-            pageLength: 5,
-            language: {
-                oPaginate: {
-                    sNext: '<i class="fa fa-forward"></i>',
-                    sPrevious: '<i class="fa fa-backward"></i>',
-                    sFirst: '<i class="fa fa-step-backward"></i>',
-                    sLast: '<i class="fa fa-step-forward"></i>'
-                }
-            }
-        })
-    });
-</script> --}}
 <script>
     $('input#submit').click(function(e) {
         e.preventDefault();
@@ -154,7 +125,12 @@
 </script>
 <script>
     $('#needConfirmingAlertCloseBtn').click(function() {
-        $('#needConfirmingAlert').addClass('hidden');
+        $('#needConfirmingAlert').slideToggle();
+    });
+</script>
+<script>
+    $('#viewReservationBeforeConfirmationButton').click(function() {
+        $('#reservationBeforeConfirmationModal').addClass('show')
     });
 </script>
 

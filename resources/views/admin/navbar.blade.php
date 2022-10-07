@@ -1,6 +1,6 @@
-<!-- partial:partials/_sidebar.html -->
-<nav class="sidebar sidebar-offcanvas lg:w-[200px]" id="sidebar">
+<!-- BEGIN - Portal Sidebar/Nav -->
 
+<nav class="sidebar transition duration-300" id="sidebar">
     <ul class="nav">
         <button id="toggleNavBtn" type="button">
             <div style="background-color: #393948; z-index: 99999;"
@@ -49,20 +49,14 @@
                 <span class="menu-title">Reservations</span>
             </a>
         </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ url('/portal/settings') }}">
+                <span class="menu-icon">
+                    <i class="mdi mdi-cogs"></i>
+                </span>
+                <span class="menu-title">Settings</span>
+            </a>
+        </li>
 
     </ul>
 </nav>
-{{-- <script>
-    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-    function openNav() {
-        document.getElementById("sidebar").style.width = "244px";
-        document.getElementById("main").style.marginLeft = "244px";
-    }
-</script>
-<script>
-    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-    function(e) {
-        document.getElementById("sidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-    }
-</script> --}}

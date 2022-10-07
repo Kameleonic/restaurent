@@ -153,17 +153,8 @@ class AdminController extends Controller
     }
 
 
-    // public function viewReservations()
-    // {
-    //     $data = Reservation::all();
-
-    //     return view('admin.reservations', compact('data'));
-    // }
-
-    // public function reservationInfo($id)
-    // {
-    //     $rs = Reservation::find($id);
-    //     dd($rs);
-    //     return view('admin.reservations', compact('rs'));
-    // }
+    public function viewSettings()
+    {
+        return view('admin.settings');
+    }
 }

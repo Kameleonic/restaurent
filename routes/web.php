@@ -70,5 +70,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post("/portal/decline-reservation/{id}", [ReservationController::class, 'declineReservation']);
     // END - Reservation Routes
+
+    // BEGIN - Settings Routes
+    Route::get("/portal/settings", [AdminController::class, 'viewSettings']);
+    // END - Settings Routes
 });
 require __DIR__ . '/auth.php';

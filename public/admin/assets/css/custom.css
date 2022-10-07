@@ -1,18 +1,48 @@
 /* // DataTables */
-@import "~datatables.net-bs4/css/dataTables.css";
-@import "~datatables.net-buttons-bs4/css/buttons.css";
+/* @import "~datatables.net-bs4/css/dataTables.css";
+@import "~datatables.net-buttons-bs4/css/buttons.css"; */
 
 /* BEGIN - Root variables */
 :root {
     --accent: #fb5849;
     --accent-fade: #FC9A91;
+    --accent-fade-60: rgb(252, 154, 145, 0.5);
     --default-dashboard-text: #eaeaea;
     --ui-dark: #0f1015;
+    --ui-dark-70: rgb(15, 16, 21, 0.7);
+    --ui-dark-60: rgb(15, 16, 21, 0.6);
     --ui-dark-glow: #2d303f;
+    --bg-slate-700: #334155;
+    --bg-slate-700-80: rgb(51, 65, 85, 0.8);
   }
 
   .page {
-    height: 100vh;
+    height: 100%;
+  }
+
+  .dash-card {
+    display: grid;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--bg-slate-700-80);
+    border-color: var(--accent-fade-60);
+  }
+
+  .dash-panel {
+    transition-duration: 300ms;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    color: #ffffffbd;
+    background-color: var(--ui-dark-70);
+  }
+
+  .dash-panel:hover {
+    transition-duration: 300ms;
+    transform: translateY(-3px);
+    color: #ffffff;
+    background-color: var(--ui-dark-60);
   }
 
   .ml {
@@ -49,6 +79,20 @@
   }
 
   /* BEGIN - Custom Dashboard UI */
+
+
+  .offcanvas {
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    position: fixed;
+    z-index: 999;
+    overflow-x: hidden;
+    transition: .5s;
+    padding-top: 60px;
+}
 
   .sidebar .nav .nav-item .nav-link .menu-title {
     color: var(--accent-fade);

@@ -9,6 +9,57 @@
 <body>
     @include('admin.navbar')
 
+    <!-- BEGIN - Add Food Item Modal -->
+    <div class="modal fade" id="reservationBeforeConfirmationModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog border-2 border-accent rounded">
+            <div class="modal-content">
+                <div class="bg-slate-800">
+
+                    <div class="p-2 text-right">
+                        <button class="close" data-bs-dismiss="modal">&#10006;
+                        </button>
+                    </div>
+
+                    <form class="form" action="{{ url('/create-menu-item') }}" method="POST"
+                        enctype="multipart/form-data">
+
+                        @csrf
+
+                        <div class="flex bg-accent-fade p-3 flex-col justify-center">
+                            <div class="flex flex-col my-2">
+
+                            </div>
+                            <div class="align-items-center flex flex-row my-2">
+                                <label for="image"></label>
+                                <input class="" style="color:slategrey" type="file" name="image">
+                                <span class="text-lg text-ui-dark" for="price">£</span>
+                                <input class="rounded-md ml-1 text-gray-800" type="number" name="price"
+                                    placeholder="Price" step="0.01">
+                            </div>
+                            <div class="flex flex-col my-2">
+                                <label for="title"></label>
+                                <input class="rounded-md text-gray-800 " type="text" name="title"
+                                    placeholder="Title">
+                            </div>
+                            <div class="flex flex-col my-2">
+                                <label for="description"></label>
+                                <textarea class="text-gray-800 rounded-md" maxlength="200" placeholder="Enter a description..." name="description"></textarea>
+                            </div>
+
+                        </div>
+                        <div class="flex justify-center">
+                            <div class="my-2">
+                                <input type="submit" class="btn btn-accent" value="Save">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END- Add Food Item Modal -->
 
     <div class="page ml">
         <div class="mx-10">
@@ -103,7 +154,12 @@
 
                                                 </td>
                                                 <td class="trow my-1 text-lg">
-                                                    More Info!
+
+                                                    <button id="viewReservationBeforeConfirmationButton" type="button"
+                                                        class="btn btn-accent">
+                                                        More Info!
+                                                    </button>
+
                                                     {{-- <div class="flex flex-row justify-content-evenly ">
                                                         <div class="mx-1">
 

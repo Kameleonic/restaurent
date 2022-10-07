@@ -20,6 +20,8 @@ class ReservationController extends Controller
     {
         $reservations = Reservation::all();
 
+        $dataTableTitle = 'A complete table of all reservation requests, with paging and search.';
+
         $reservationsCount = Reservation::all()->count();
 
         $todaysDate = Carbon::now()->toDateString();
@@ -48,15 +50,19 @@ class ReservationController extends Controller
 
         // dd($reservationsNeedConfirming);
 
-        return view('admin.reservations', compact(
-            'reservations',
-            'reservationsCount',
-            'reservationsConfirmed',
-            'reservationsToday',
-            'reservationsTomorrow',
-            'todaysDate',
-            'reservationsNeedConfirming'
-        ));
+        return view(
+            'admin.reservations',
+            compact(
+                'reservations',
+                'reservationsCount',
+                'reservationsConfirmed',
+                'reservationsToday',
+                'reservationsTomorrow',
+                'todaysDate',
+                'dataTableTitle',
+                'reservationsNeedConfirming'
+            )
+        );
     }
 
     public function reservationInfo($id)
