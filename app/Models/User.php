@@ -22,9 +22,9 @@ class User extends Authenticatable
     {
         if ($user->usertype == '1') {
             return true;
+        } else {
+            return false;
         }
-
-        return false;
     }
 
     /**

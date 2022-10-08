@@ -24,8 +24,10 @@ class CreateEmployeesTable extends Migration
             $table->string('tel_no');
             $table->int('salary');
             $table->int('contracted_hours');
-            $table->date('date_employed');
+            $table->date('employee_start_date');
             $table->int('employee_warning');
+            $table->int('holiday_entitlement');
+            $table->int('employment_live');
             $table->timestamps();
         });
     }

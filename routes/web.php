@@ -72,7 +72,11 @@ Route::group(['middleware' => ['auth']], function () {
     // END - Reservation Routes
 
     // BEGIN - Settings Routes
-    Route::get("/portal/settings", [AdminController::class, 'viewSettings']);
+    Route::get("/portal/settings", [AdminController::class, "viewSettings"]);
     // END - Settings Routes
+
+    // BEGIN - Employee Routes
+    Route::get("/portal/employees/dashboard", [EmployeeControler::class, "viewEmployeeDashboard"]);
+    // END - Employee Routes
 });
 require __DIR__ . '/auth.php';

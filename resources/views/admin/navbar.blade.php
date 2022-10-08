@@ -24,7 +24,17 @@
                 <span class="menu-title">Users</span>
             </a>
         </li>
-
+        @if (auth()->user()->usertype == 1)
+            <li class="nav-item menu-items">
+                <a class="nav-link" href="{{ url('/portal/employees/dashboard') }}">
+                    <span class="menu-icon">
+                        <i class="mdi mdi-speedometer"></i>
+                    </span>
+                    <span class="menu-title">Employees</span>
+                </a>
+            </li>
+        @else
+        @endif
         <li class="nav-item menu-items">
             <a class="nav-link" href="{{ url('/portal/foodmenu') }}">
                 <span class="menu-icon">
