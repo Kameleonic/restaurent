@@ -17,7 +17,7 @@
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.5",
         "mallardduck/blade-lucide-icons": "^1.9",
-        "pdfmake/pdfmake": "^0.1.31"
+        "uxweb/sweet-alert": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

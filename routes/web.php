@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,7 +77,8 @@ Route::group(['middleware' => ['auth']], function () {
     // END - Settings Routes
 
     // BEGIN - Employee Routes
-    Route::get("/portal/employees/dashboard", [EmployeeControler::class, "viewEmployeeDashboard"]);
+    Route::get("/portal/employees/", [EmployeeController::class, "employeesIndex"])->name('employees.index');
+    Route::post("/portal/employees/new-employee", [EmployeeController::class, "createEmployee"])->name('create-employee');
     // END - Employee Routes
 });
 require __DIR__ . '/auth.php';
