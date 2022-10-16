@@ -38,11 +38,26 @@
     background-color: var(--ui-dark-70);
   }
 
+  .dash-panel-static {
+    transition-duration: 300ms;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    color: #ffffffbd;
+    background-color: var(--ui-dark-70);
+  }
+
   .dash-panel:hover {
     transition-duration: 300ms;
     transform: translateY(-3px);
     color: #ffffff;
     background-color: var(--ui-dark-60);
+  }
+  .panel-nav {
+    border-radius: 0.375rem;
+    padding: 1rem;
+    color: #ffffffbd;
+    background-color: var(--ui-dark-glow);
+    width: 100%;
   }
 
   .ml {
@@ -180,12 +195,29 @@
 }
   /* BEGIN - Custom button - Styling */
 
+
 .btn-accent {
     border-radius: 5px;
     border-left: 4px solid var(--accent);
     border-top: 1px solid var(--accent-fade);
     border-bottom: 1px solid var(--accent-fade);
     border-right: 1px solid var(--accent-fade);
+}
+
+.btn-accent-center {
+    border-radius: 5px;
+    border-left: 1px solid var(--accent);
+    border-top: 1px solid var(--accent-fade);
+    border-bottom: 1px solid var(--accent-fade);
+    border-right: 1px solid var(--accent-fade);
+}
+
+.btn-accent-right {
+    border-radius: 5px;
+    border-right: 4px solid var(--accent);
+    border-top: 1px solid var(--accent-fade);
+    border-bottom: 1px solid var(--accent-fade);
+    border-left: 1px solid var(--accent-fade);
 }
 
 .btn-accent:hover {
@@ -280,6 +312,20 @@
     color: var(--accent);
     margin-left: 5px;
     margin-top: 5px;
+}
+
+.dt-buttonS {
+    padding: 3px!important;
+    font-size: 10px!important;
+    font-weight: 500!important;
+    color: var(--accent)!important;
+    border-radius: 5px!important;
+    border: 1px solid var(--accent-fade)!important;
+    border-left: 3px solid !important;
+    background-color: var(--bg-slate-700)!important;
+    width: 60px!important;
+    height: 25px!important;
+    margin: 6px 2px!important;
 }
 
 .dataTables_wrapper .dataTables_length select {

@@ -73,6 +73,52 @@
 </script>
 <script>
     $(document).ready(function() {
+        $('#currentEmployeeTable').DataTable({
+            dom: 'Bfrtrp',
+            pagingType: 'simple',
+            searching: false,
+            responsive: true,
+            pageLength: 10,
+            language: {
+                oPaginate: {
+                    sNext: '<i class="fa fa-forward"></i>',
+                    sPrevious: '<i class="fa fa-backward"></i>',
+                    sFirst: '<i class="fa fa-step-backward"></i>',
+                    sLast: '<i class="fa fa-step-forward"></i>'
+                }
+            }
+        });
+        $('#currentEmployeeTable_wrapper').addClass('col-span-6');
+        $('.dt-button').addClass('dt-buttonS');
+        $('#currentEmployeeTable_wrapper')
+            .addClass('text-white');
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#currentEmployeeTable2').DataTable({
+            dom: 'Bfrtrp',
+            pagingType: 'simple',
+            searching: false,
+            responsive: true,
+            pageLength: 10,
+            language: {
+                oPaginate: {
+                    sNext: '<i class="fa fa-forward"></i>',
+                    sPrevious: '<i class="fa fa-backward"></i>',
+                    sFirst: '<i class="fa fa-step-backward"></i>',
+                    sLast: '<i class="fa fa-step-forward"></i>'
+                }
+            }
+        });
+        $('#currentEmployeeTable_wrapper').addClass('col-span-12');
+        $('.dt-button').addClass('dt-buttonS');
+        $('#currentEmployeeTable_wrapper')
+            .addClass('text-white');
+    });
+</script>
+<script>
+    $(document).ready(function() {
         $('#reservationsBookedForToday').DataTable({
             pagingType: 'simple',
             pageLength: 10,

@@ -13,23 +13,26 @@ class CreateEmployeesTable extends Migration
      */
     public function up()
     {
-        Schema::create('employees', function (Blueprint $table) {
-            $table->id();
-            $table->integer('employee_id')->default(null);
-            $table->tinyInteger('employee_type')->defualt(0);
-            $table->string('first_name');
-            $table->string('surname');
-            $table->text('address');
-            $table->string('email');
-            $table->string('tel_no');
-            $table->integer('salary');
-            $table->tinyInteger('contracted_hours');
-            $table->string('employee_start_date');
-            $table->tinyInteger('employee_warning');
-            $table->tinyInteger('holiday_entitlement');
-            $table->tinyInteger('employment_live');
-            $table->timestamps();
-        });
+        Schema::create(
+            'employees',
+            function (Blueprint $table) {
+                $table->id('employee_id')->startingValue(1001)->primaryKey();
+                $table->tinyInteger('employee_type')->defualt(0);
+                $table->string('first_name')->nullable();
+                $table->string('surname')->nullable();
+                $table->date('birth_date')->nullable();
+                $table->text('address')->nullable();
+                $table->string('email')->nullable();
+                $table->string('tel_no')->nullable();
+                $table->integer('salary')->nullable();
+                $table->tinyInteger('contracted_hours')->nullable();
+                $table->string('employee_start_date')->nullable();
+                $table->tinyInteger('employee_warning')->nullable();
+                $table->tinyInteger('holiday_entitlement')->nullable();
+                $table->tinyInteger('employment_live')->nullable();
+                $table->timestamps();
+            }
+        );
     }
 
     /**

@@ -11985,7 +11985,7 @@ textarea.is-invalid.tt-hint {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #000000;
+  background-color: #2e3a4b;
   background-clip: padding-box;
   border: 1px solid #2c2e33;
   border-radius: 0.3rem;
