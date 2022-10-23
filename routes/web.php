@@ -78,7 +78,11 @@ Route::group(['middleware' => ['auth']], function () {
 
     // BEGIN - Employee Routes
     Route::get("/portal/employees/", [EmployeeController::class, "employeesIndex"])->name('employees.index');
+    Route::get("/portal/employee/{id}", [EmployeeController::class, "viewEmployee"])->name('employees.view');
+    Route::delete("/portal/employees/delete/{employee}", [EmployeeController::class, "employeesDelete"])->name('employees-delete');
     Route::post("/portal/employees/new-employee", [EmployeeController::class, "createEmployee"])->name('create-employee');
+    Route::post("/portal/employees/update/{employee_id}", [EmployeeController::class, "updateEmployee"])->name('update-employee');
+
     // END - Employee Routes
 });
 require __DIR__ . '/auth.php';

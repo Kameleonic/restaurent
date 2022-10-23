@@ -4,13 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Collective\Html\Eloquent\FormAccessible;
+use Carbon\Carbon;
 
 class Employee extends Model
 {
     use HasFactory;
+    use FormAccessible;
 
     protected $fillable = [
-        'employee_id',
         'first_name',
         'surname',
         'employee_id',
@@ -25,4 +27,9 @@ class Employee extends Model
         'holiday_entitlement',
         'employment_live',
     ];
+
+    public function getfirstName($first_name)
+    {
+        return Carbon::parse($first_name)->format('m/d/Y');
+    }
 }

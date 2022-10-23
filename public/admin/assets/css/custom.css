@@ -4,8 +4,8 @@
 
 /* BEGIN - Root variables */
 :root {
-    --accent: #fb5849;
-    --accent-fade: #FC9A91;
+    --accent: rgb(251, 88, 73);
+    --accent-fade: rgb(252, 154, 145);
     --accent-fade-60: rgb(252, 154, 145, 0.5);
     --default-dashboard-text: #eaeaea;
     --ui-dark: #0f1015;
@@ -13,6 +13,7 @@
     --ui-dark-60: rgb(15, 16, 21, 0.6);
     --ui-dark-glow: #2d303f;
     --bg-slate-700: #334155;
+    --slate-800: #1f293b;
     --bg-slate-700-80: rgb(51, 65, 85, 0.8);
   }
 
@@ -78,9 +79,16 @@
     padding-left: 0;
   }
 
+  input {
+    border-radius: 3px!important;
+    padding: 2px!important;
+    border: 1px solid rgba(0, 0, 0, 0.1)!important;
+    color: rgba(21, 21, 21, 0.963)!important;
+
+  }
+
   input::placeholder {
     color: rgba(46, 46, 46, 0.415)!important;
-
   }
   textarea::placeholder {
     color: rgba(46, 46, 46, 0.415)!important;
@@ -195,40 +203,63 @@
 }
   /* BEGIN - Custom button - Styling */
 
+  .time-frame {
+    background-color: #000000;
+    color: #ffffff;
+    width: 300px;
+    font-family: Arial;
+}
 
-.btn-accent {
+.time-frame > div {
+    width: 100%;
+    text-align: center;
+}
+
+#date-part {
+    font-size: 1.2rem;
+}
+#time-part {
+    font-size: 2rem;
+}
+
+  /* Buttons
+  ////////////*/
+
+    .btn-accent {
     border-radius: 5px;
+    background-color: var(--slate-800);
     border-left: 4px solid var(--accent);
     border-top: 1px solid var(--accent-fade);
     border-bottom: 1px solid var(--accent-fade);
     border-right: 1px solid var(--accent-fade);
-}
-
-.btn-accent-center {
+    }
+    .btn-group.btn-accent {
     border-radius: 5px;
-    border-left: 1px solid var(--accent);
+    background-color: var(--slate-800);
+    border-left: 4px solid var(--accent);
     border-top: 1px solid var(--accent-fade);
     border-bottom: 1px solid var(--accent-fade);
-    border-right: 1px solid var(--accent-fade);
-}
+    }
 
-.btn-accent-right {
+    .btn-group.btn-accent-center {
     border-radius: 5px;
+    background-color: var(--slate-800);
+    border-top: 1px solid var(--accent-fade);
+    border-bottom: 1px solid var(--accent-fade);
+    }
+
+    .btn-group.btn-accent-right {
+    border-radius: 5px;
+    background-color: var(--slate-800);
     border-right: 4px solid var(--accent);
     border-top: 1px solid var(--accent-fade);
     border-bottom: 1px solid var(--accent-fade);
-    border-left: 1px solid var(--accent-fade);
-}
+    }
 
-.btn-accent:hover {
-    border-radius: 5px;
+    .btn-group.btn-accent:hover,.btn-accent-center:hover,.btn-accent-right:hover {
     background-color: var(--ui-dark-glow);
-    border-left: 4px solid var(--accent);
-    border-top: 1px solid var(--accent);
-    border-bottom: 1px solid var(--accent);
-    border-right: 1px solid var(--accent);
     transition-duration: 300ms;
-}
+    }
 
 /* END - Custom button - Styling */
 
@@ -279,8 +310,12 @@
 /* END - Custom form file input - Styling */
 
 /* BEGIN - DataTables - Styling */
+#currentEmployeeTable {
+    opacity: 100%;
+}
 
 .dataTables_wrapper {
+    border-color: var(--accent-fade);
     display: flex;
     flex-direction: column;
     flex: 1 1 0%;
@@ -297,6 +332,8 @@
     color: var(--default-dashboard-text);
     border-color: var(--accent-fade);
 }
+
+
 
 .dataTables_wrapper select {
     background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='#6b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e);
@@ -333,8 +370,8 @@
 }
 
 .dataTables_wrapper .dataTables_paginate {
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
+    margin-bottom: 0.1rem;
+    margin-top: 0.1rem;
     font-size: 1.1rem;
     text-align: end;
 }
@@ -345,7 +382,25 @@
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
     color: var(--accent-fade) !important;
-    margin: 0.25rem 0.5rem;
+    margin: 0 0.4rem;
+    padding: 0 0.2rem;
+    font-size: 0.75rem;
+}
+#currentEmployeeTable_previous {
+    color: var(--accent);
+    margin: 0 0.4rem;
+}
+#currentEmployeeTable_next {
+    color: var(--accent);
+    margin: 0 0.4rem;
+}
+#currentEmployeeTable_previous:disabled {
+    color: var(--accent-fade-60) !important;
+    margin: 0 0.4rem;
+}
+#currentEmployeeTable_next:disabled{
+    color: var(--accent-fade-60) !important;
+    margin: 0 0.4rem;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current {

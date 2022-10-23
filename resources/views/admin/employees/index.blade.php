@@ -9,6 +9,7 @@
 
     @include('admin.navbar')
     @include('sweet::alert')
+    @livewireStyles
 
 
     <!-- BEGIN - Add Employee Modal -->
@@ -27,63 +28,77 @@
                         <div class="container-fluid flex flex-row justify-content-around mb-2">
                             <div class="flex flex-col">
                                 <label class="mb-1" for="firstName">First Name</label>
-                                <input name="firstName" type="firstName" placeholder="">
+                                <input class="text-ui-dark" name="firstName" type="firstName" placeholder="">
                             </div>
                             <div class="flex flex-col">
                                 <label class="mb-1" for="surname">Last Name</label>
-                                <input name="surname" type="surname" placeholder="">
+                                <input class="text-ui-dark" name="surname" type="surname" placeholder="">
                             </div>
                         </div>
                         <div class="container-fluid flex flex-row justify-content-around mb-2">
                             <div class="flex flex-col">
                                 <label class="mb-1" for="email">Email Address:</label>
-                                <input name="email" type="emailAddress" placeholder="me@example.com">
+                                <input class="text-ui-dark" name="email" type="emailAddress"
+                                    placeholder="me@example.com">
                             </div>
                             <div class="flex flex-col">
                                 <label class="mb-1" for="telephone">Contact Number:</label>
-                                <input name="telephone" type="telephone" placeholder="">
+                                <input class="text-ui-dark" name="telephone" type="telephone" placeholder="">
                             </div>
                         </div>
                         <div class="container-fluid flex flex-row justify-content-around mb-2">
                             <div class="flex flex-col">
-                                <label class="mb-1" for="birth_date">Birth Date:</label>
-                                <input class="h-6" name="birthDate" type="date" placeholder="">
+                                <label class="mb-1" for="contractedHours">Contracted Hours:</label>
+                                <input class="text-ui-dark w-[181px]" class="h-6" name="contractedHours"
+                                    type="number" step="0.25" value="40">
+                            </div>
+                            <div class="flex flex-col">
+                                <label class="mb-1" for="birthDate">Birth Date:</label>
+                                <input class="text-ui-dark w-[181px]" class="h-6 date" name="birthDate"
+                                    max="{{ $minimumAgeToWork }}" type="date" placeholder="">
                             </div>
                         </div>
                         <div class="container-fluid flex flex-row justify-content-around mb-2">
-                            <div class="flex flex-col">
+                            <div class="flex flex-col ">
+
                                 <label class="mb-1" for="inputStreet">Street Address:
                                 </label>
-                                <input type="inputStreetOne" class="mb-2 p-0 w-[181px]" name="inputStreetOne"
-                                    placeholder="" rows="2"></input>
-                                <input type="inputStreetTwo" class="mb-2 p-0 w-[181px]" name="inputStreetTwo"
-                                    placeholder="" rows="2"></input>
+                                <input class="text-ui-dark mb-2 p-0 w-[181px]" type="inputStreetOne"
+                                    name="inputStreetOne" placeholder="" rows="2"></input>
+
+                                <input class="text-ui-dark mb-2 p-0 w-[181px]" type="inputStreetTwo"
+                                    name="inputStreetTwo" placeholder="" rows="2"></input>
 
                             </div>
                             <div class="flex flex-col justify-content-end pb-2">
                                 <label class="mb-1" for="town">Town:</label>
-                                <input type="inputTown" class="" name="inputTown" placeholder="">
+                                <input class="text-ui-dark" type="inputTown" class="" name="inputTown"
+                                    placeholder="">
                             </div>
                         </div>
                         <div class="container-fluid flex flex-row justify-content-around mb-2">
 
                             <div class="flex flex-col">
                                 <label class="mb-1" for="inputCity">City:</label>
-                                <input type="inputCity" class="" name="inputCity" placeholder="">
+                                <input class="text-ui-dark" type="inputCity" class="" name="inputCity"
+                                    placeholder="">
                             </div>
                             <div class="flex flex-col">
                                 <label class="mb-1" for="inputPostcode">Postcode:</label>
-                                <input type="inputPostcode" class="" name="inputPostcode" placeholder="">
+                                <input class="text-ui-dark" type="inputPostcode" class="" name="inputPostcode"
+                                    placeholder="">
                             </div>
                         </div>
                         <div class="container-fluid flex flex-row justify-content-around mb-2" placeholder="">
                             <div class="flex flex-col">
                                 <label class="mb-1" for="inputCounty">County:</label>
-                                <input type="inputCounty" class="" name="inputCounty" placeholder="">
+                                <input class="text-ui-dark" type="inputCounty" class="" name="inputCounty"
+                                    placeholder="">
                             </div>
                             <div class="flex flex-col">
                                 <label class="mb-1" for="country">Country:</label>
-                                <input type="inputCountry" class="" name="inputCountry" placeholder="">
+                                <input class="text-ui-dark" type="inputCountry" class="" name="inputCountry"
+                                    placeholder="">
                             </div>
                         </div>
                         <div class="flex justify-content-center mt-4">
@@ -96,89 +111,19 @@
         </div>
     </div>
     <!-- END - Add Employee Modal -->
-    <!-- BEGIN - View Employee Modal -->
-    <div class="modal fade" id="createEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-xl">Add New Employee</h5>
-                    <button type="button" class="btn btn-accent text-xs" data-bs-dismiss="modal">Close</button>
-                </div>
-                <div class="modal-body text-white">
-                    <div class="container-fluid flex flex-row justify-content-around mb-2">
-                        <div class="flex flex-col">
-                            <label class="mb-1" for="firstName">First Name</label>
-                            <input name="firstName" type="firstName" placeholder="">
-                        </div>
-                        <div class="flex flex-col">
-                            <label class="mb-1" for="surname">Last Name</label>
-                            <input name="surname" type="surname" placeholder="">
-                        </div>
-                    </div>
-                    <div class="container-fluid flex flex-row justify-content-around mb-2">
-                        <div class="flex flex-col">
-                            <label class="mb-1" for="email">Email Address:</label>
-                            <input name="email" type="emailAddress" placeholder="me@example.com">
-                        </div>
-                        <div class="flex flex-col">
-                            <label class="mb-1" for="telephone">Contact Number:</label>
-                            <input name="telephone" type="telephone" placeholder="">
-                        </div>
-                    </div>
-                    <div class="container-fluid flex flex-row justify-content-around mb-2">
-                        <div class="flex flex-col">
-                            <label class="mb-1" for="birth_date">Birth Date:</label>
-                            <input class="h-6" name="birthDate" type="date" placeholder="">
-                        </div>
-                    </div>
-                    <div class="container-fluid flex flex-row justify-content-around mb-2">
-                        <div class="flex flex-col">
-                            <label class="mb-1" for="inputStreet">Street Address:
-                            </label>
-                            <input type="inputStreetOne" class="mb-2 p-0 w-[181px]" name="inputStreetOne"
-                                placeholder="" rows="2"></input>
-                            <input type="inputStreetTwo" class="mb-2 p-0 w-[181px]" name="inputStreetTwo"
-                                placeholder="" rows="2"></input>
-
-                        </div>
-                        <div class="flex flex-col justify-content-end pb-2">
-                            <label class="mb-1" for="town">Town:</label>
-                            <input type="inputTown" class="" name="inputTown" placeholder="">
-                        </div>
-                    </div>
-                    <div class="container-fluid flex flex-row justify-content-around mb-2">
-
-                        <div class="flex flex-col">
-                            <label class="mb-1" for="inputCity">City:</label>
-                            <input type="inputCity" class="" name="inputCity" placeholder="">
-                        </div>
-                        <div class="flex flex-col">
-                            <label class="mb-1" for="inputPostcode">Postcode:</label>
-                            <input type="inputPostcode" class="" name="inputPostcode" placeholder="">
-                        </div>
-                    </div>
-                    <div class="container-fluid flex flex-row justify-content-around mb-2" placeholder="">
-                        <div class="flex flex-col">
-                            <label class="mb-1" for="inputCounty">County:</label>
-                            <input type="inputCounty" class="" name="inputCounty" placeholder="">
-                        </div>
-                        <div class="flex flex-col">
-                            <label class="mb-1" for="country">Country:</label>
-                            <input type="inputCountry" class="" name="inputCountry" placeholder="">
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END - Add Employee Modal -->
-
 
     <div class="page ml">
         <div class="mx-5 my-5">
+            @if (session('success'))
+                <div class="col-sm-12">
+                    <div class="alert  alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            @endif
             <div
                 class="flex flex-row align-items-baseline justify-content-between mb-2 text-lg font-semibold border-b-2 border-accentfade">
                 <div class="w-1/4 text-left">
@@ -194,21 +139,22 @@
                 <div class="col-span-12 p-2 panel-nav">
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <button id="newEmployeeButton" data-bs-toggle="modal" data-bs-target="#createEmployeeModal"
-                            type="button" class="btn btn-accent">
-                            Add
+                            type="button" class="btn btn-group btn-accent">
+                            Add Employee
                         </button>
-                        <button type="button" class="btn btn-accent-center">
-                            Add
+                        {{-- <button type="button" class="btn btn-group btn-accent-center">
+
                         </button>
-                        <button type="button" class="btn btn-accent-right">
+                        <button type="button" class="btn btn-group btn-accent-right">
                             Add
-                        </button>
+                        </button> --}}
                     </div>
                 </div>
                 <!-- END - Trigger Modal -->
 
                 <table id="currentEmployeeTable"
-                    class="col-span-12 bg-ui-dark/80 border-4 border-slate-800 rounded-lg shadow text-sm text-white">
+                    class="col-span-12 bg-ui-dark/80 border-4 border-slate-800 rounded-lg shadow text-sm text-white opacity-0 transition-opacity transition-delay-1000 transition-duration-500 ">
+
                     <thead class="text-dthead border-b-2 bg-slate-800 border-accentfade">
                         <th class="border-b-2 pl-2">
                             <div class="h-4 border-l-3 pb-4 pl-1 w-7 border-accentfade">ID</div>
@@ -226,7 +172,7 @@
                         </th>
                         <th class="border-b-2 border-accentfade">
                             <div class="h-4 border-l-3 pb-4 pl-1 border-accentfade">
-                                <x-lucide-info class="w-5 h-5" />
+                                <x-lucide-activity class="mx-auto w-5 h-5" />
                             </div>
                         </th>
                         <th class="border-b-2 border-accentfade">
@@ -250,10 +196,19 @@
                                     {{ $e->contracted_hours }}
                                 </td>
                                 <td class="trow text-center">
-                                    <button type="button" class="" data-toggle="tooltip" data-placement="top"
-                                        title="">
-                                        <x-lucide-edit class="w-4 h-4 text-info" />
-                                    </button>
+                                    @if ($e->status == 1)
+                                        <div>
+                                            <x-lucide-circle-dot class="mx-auto w-4 h-4 text-red-600" />
+                                        </div>
+                                    @elseif ($e->status == 2)
+                                        <div>
+                                            <x-lucide-circle-dot class="mx-auto w-4 h-4 text-green-600" />
+                                        </div>
+                                    @elseif ($e->status == 3)
+                                        <div>
+                                            <x-lucide-circle-dot class="mx-auto w-4 h-4 text-amber-600" />
+                                        </div>
+                                    @endif
                                 </td>
                                 <td class="trow text-center">
                                     <div class="dropdown">
@@ -263,8 +218,16 @@
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="triggerId">
                                             <a class="dropdown-item" href="#">Leave a Message</a>
-                                            <a class="dropdown-item" href="#">Edit</a>
-                                            <a class="dropdown-item disabled" href="#">Delete</a>
+                                            <a href="/portal/employee/{{ $e->employee_id }}"
+                                                class="dropdown-item">View
+                                                Employee</a>
+                                            <form action="/portal/employees/delete/{{ $e->employee_id }}"
+                                                method="post">
+                                                {{ method_field('delete') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="dropdown-item danger"
+                                                    href="#">Delete</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </td>
@@ -272,13 +235,51 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div class="col-span-4 dash-panel-static">
-                    <h6>A table of employees that have an active status.</h6>
+                <div class="col-span-4 dash-panel-static border border-accentfade">
+                    <h6>
+                        A chart of employees that have an active working status.
+                    </h6>
+                    <canvas id="myChart">
+                    </canvas>
                 </div>
             </div>
         </div>
     </div>
     @include('admin.adminscripts')
+    @livewireScripts
+
+    <script>
+        var textColor = '#4ce543';
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Speed',
+                    data: [],
+                    borderWidth: 1,
+                }]
+            },
+            options: {
+                labels: [],
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            color: ['#4ce543']
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            color: ['#4ce543']
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
 
     {{-- <script>
         $.ajaxSetup({

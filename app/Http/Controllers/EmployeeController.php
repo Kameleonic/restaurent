@@ -7,10 +7,14 @@ use App\Models\Employee;
 use App\Models\User;
 use App\Models\SystemSetting;
 use \Carbon\Carbon;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\Console\Helper\Table;
+use Symfony\Component\Console\Input\Input;
 
 class EmployeeController extends Controller
 {
+    public $primarykey = 'employee_id';
 
     public $nextEmployeeId = 0;
 
@@ -23,7 +27,7 @@ class EmployeeController extends Controller
     public function employeesIndex()
     {
 
-        $employees = Employee::where('employee_id', '>', 1001)
+        $employees = Employee::where('employee_id', '>=', 1001)
             ->get();
         // dd($employees);
 
@@ -74,12 +78,14 @@ class EmployeeController extends Controller
             . $r->inputCountry;
 
         $data->email = $r->email;
+        $data->birth_date = $r->birthDate;
         $data->tel_no = $r->telephone;
         $data->salary = $r->salary;
         $data->contracted_hours = $r->contractedHours;
         $data->employee_start_date = $r->startDate;
         $data->employee_warning = 0;
         $data->holiday_entitlement = 21;
+
 
         // dd($data);
 
@@ -91,6 +97,61 @@ class EmployeeController extends Controller
         $data->save();
 
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Employee successfully created');
+    }
+
+    public function updateEmployee(Request $r, $employee_id)
+    {
+
+        // Load the employee record.
+        $data = Employee::where('employee_id', $employee_id)
+            ->get();
+        // dd($r);
+
+        // Update each value dependant on if statement to minimize querys.
+        if ($r->first_name !== $data[0]->first_name) {
+            Employee::query()
+                ->where('employee_id', $employee_id)
+                ->update(['first_name' => $r->first_name]);
+        }
+        if ($r->surname !== $data[0]->surname) {
+            Employee::query()
+                ->where('employee_id', $employee_id)
+                ->update(['surname' => $r->surname]);
+        }
+        if ($r->email !== $data[0]->email) {
+            Employee::query()
+                ->where('employee_id', $employee_id)
+                ->update(['email' => $r->email]);
+        }
+        if ($r->tel_no !== $data[0]->tel_no) {
+            Employee::query()
+                ->where('employee_id', $employee_id)
+                ->update(['tel_no' => $r->tel_no]);
+        }
+
+        return redirect()->back()->with('success', 'Employee successfully created');
+    }
+
+    public function viewEmployee($employee_id,)
+    {
+        $e = Employee::select()
+            ->where('employee_id', '=', $employee_id)
+            ->first();
+        // dd($e);
+        return view('admin.employees.partials.view-employee', compact('e'));
+    }
+
+    public function employeesDelete($employee_id)
+    {
+
+
+        $data = Employee::where('employee_id', $employee_id)->delete();
+
+        if ($data == null) {
+            return redirect()->back()->with('error', 'Employee could not be found.');
+        } else {
+            return redirect()->back()->with('success', 'Employee successfully removed.');
+        }
     }
 }

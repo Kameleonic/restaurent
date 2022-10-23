@@ -3,6 +3,7 @@
 </script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script type="text/javascript"
     src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-html5-2.2.3/sb-1.3.4/sp-2.0.2/sl-1.4.0/datatables.min.js"
     defer></script>
@@ -12,7 +13,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
     integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"
+    integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@livewireScripts
 <script>
     $('#foodItemsTable').DataTable({
 
@@ -73,12 +77,14 @@
 </script>
 <script>
     $(document).ready(function() {
+        $('#currentEmployeeTable').addClass(
+            'opacity-0');
         $('#currentEmployeeTable').DataTable({
-            dom: 'Bfrtrp',
+            dom: 'Bfritrp',
             pagingType: 'simple',
             searching: false,
             responsive: true,
-            pageLength: 10,
+            pageLength: 5,
             language: {
                 oPaginate: {
                     sNext: '<i class="fa fa-forward"></i>',
@@ -88,10 +94,15 @@
                 }
             }
         });
-        $('#currentEmployeeTable_wrapper').addClass('col-span-6');
+        $('#currentEmployeeTable').delay(1000).removeClass("opacity-0", 1000);
+        $('#currentEmployeeTable_wrapper').addClass(
+            'border border-accentFade transition-duration-500 text-white col-span-8 dash-panel-static');
         $('.dt-button').addClass('dt-buttonS');
-        $('#currentEmployeeTable_wrapper')
-            .addClass('text-white');
+        $("<div class='-translate-y-4 mr-2 mb-1 flex justify-content-center text-lg font-bold'><div class='-mb-10 bg-slate-800 border-l-2 border-r-2 border-slate-800 border-t-2 pb-2 px-2 rounded-top'>Employees Table</div></div>")
+            .insertAfter(
+                ".dt-buttons");
+
+
     });
 </script>
 <script>
@@ -182,5 +193,19 @@
         $('#reservationBeforeConfirmationModal').addClass('show')
     });
 </script>
+{{-- <script>
+    $(document).ready(function() {
+        var interval = setInterval(function() {
+            var momentNow = moment();
+            $('#date-part').html(momentNow.format('YYYY MMMM DD') + ' ' +
+                momentNow.format('dddd')
+                .substring(0, 3).toUpperCase());
+            $('#time-part').html(momentNow.format('A hh:mm:ss'));
+        }, 100);
 
+        $('#stop-interval').on('click', function() {
+            clearInterval(interval);
+        });
+    });
+</script> --}}
 <!-- End custom js for this page -->

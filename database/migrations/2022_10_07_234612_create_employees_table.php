@@ -16,8 +16,9 @@ class CreateEmployeesTable extends Migration
         Schema::create(
             'employees',
             function (Blueprint $table) {
-                $table->id('employee_id')->startingValue(1001)->primaryKey();
-                $table->tinyInteger('employee_type')->defualt(0);
+                $table->id('employee_id')->startingValue(1001)->primary();
+                $table->tinyInteger('employee_type')->nullable();
+                $table->string('role')->nullable();
                 $table->string('first_name')->nullable();
                 $table->string('surname')->nullable();
                 $table->date('birth_date')->nullable();
@@ -25,6 +26,7 @@ class CreateEmployeesTable extends Migration
                 $table->string('email')->nullable();
                 $table->string('tel_no')->nullable();
                 $table->integer('salary')->nullable();
+                $table->tinyInteger('status')->nullable();
                 $table->tinyInteger('contracted_hours')->nullable();
                 $table->string('employee_start_date')->nullable();
                 $table->tinyInteger('employee_warning')->nullable();
