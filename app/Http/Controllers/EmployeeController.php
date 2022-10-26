@@ -129,6 +129,31 @@ class EmployeeController extends Controller
                 ->where('employee_id', $employee_id)
                 ->update(['tel_no' => $r->tel_no]);
         }
+        if ($r->birth_date !== $data[0]->birth_date) {
+            Employee::query()
+                ->where('employee_id', $employee_id)
+                ->update(['birth_date' => $r->birth_date]);
+        }
+
+        // We define the address into one variable.
+
+        $newAddress =
+            $r->street_one . ' '
+            .$r->street_two . ', '
+            .$r->town . ', '
+            .$r->city . ', '
+            .$r->county . ', '
+            .$r->postcode . ', '
+            .$r->country;
+        // dd($newAddress);
+
+
+        // Now we update the address.
+        if ($newAddress !== $data[0]->address) {
+            Employee::query()
+                ->where('employee_id', $employee_id)
+                ->update(['address' => $newAddress]);
+        }
 
         return redirect()->back()->with('success', 'Employee successfully created');
     }

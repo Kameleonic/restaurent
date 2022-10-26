@@ -116,10 +116,11 @@
         <div class="mx-5 my-5">
             @if (session('success'))
                 <div class="col-sm-12">
-                    <div class="alert  alert-success alert-dismissible fade show" role="alert">
+                    <div class="flex alert alert-success alert-dismissible justify-between fade show font-bold"
+                        role="alert">
                         {{ session('success') }}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                            <x-lucide-x-square class="h-5 w-5 text-slate-800 rounded" />
                         </button>
                     </div>
                 </div>
@@ -212,21 +213,28 @@
                                 </td>
                                 <td class="trow text-center">
                                     <div class="dropdown">
-                                        <button class="btn btn-accent dropdown-toggle" type="button" id="triggerId"
-                                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button class="btn btn-dropdown dropdown-toggle" type="button"
+                                            id="dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
                                             Actions
                                         </button>
-                                        <div class="dropdown-menu" aria-labelledby="triggerId">
-                                            <a class="dropdown-item" href="#">Leave a Message</a>
-                                            <a href="/portal/employee/{{ $e->employee_id }}"
-                                                class="dropdown-item">View
-                                                Employee</a>
+                                        <div id="dropdown" class="dropdown-menu" aria-labelledby="triggerId">
+                                            <a class="dropdown-item" href="#">
+                                                <x-lucide-mail class="w-4 h-4 mr-3" />
+                                                Leave a Message
+                                            </a>
+                                            <a href="/portal/employee/{{ $e->employee_id }}" class="dropdown-item">
+                                                <x-lucide-edit class="w-4 h-4 mr-3" />
+                                                View/Edit
+                                            </a>
                                             <form action="/portal/employees/delete/{{ $e->employee_id }}"
                                                 method="post">
                                                 {{ method_field('delete') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="dropdown-item danger"
-                                                    href="#">Delete</button>
+                                                <button type="submit" class="dropdown-item danger" href="#">
+                                                    <x-lucide-trash-2 class="w-4 h-4 mr-3" />
+                                                    Delete
+                                                </button>
                                             </form>
                                         </div>
                                     </div>
@@ -246,7 +254,7 @@
         </div>
     </div>
     @include('admin.adminscripts')
-    @livewireScripts
+    {{-- @livewireScripts --}}
 
     <script>
         var textColor = '#4ce543';

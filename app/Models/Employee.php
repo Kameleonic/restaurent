@@ -28,8 +28,8 @@ class Employee extends Model
         'employment_live',
     ];
 
-    public function getfirstName($first_name)
+    public function getbirthDate($birth_date)
     {
-        return Carbon::parse($first_name)->format('m/d/Y');
+        return Carbon::parse($birth_date)->format('m/d/Y');
     }
 }

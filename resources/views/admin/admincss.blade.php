@@ -5,13 +5,14 @@
 
 <!-- plugins:css -->
 <link rel="stylesheet" href="/admin/assets/vendors/mdi/css/materialdesignicons.min.css">
-{{-- <link rel="stylesheet" href="/admin/assets/vendors/css/vendor.bundle.base.css"> --}}
+<link rel="stylesheet" href="/admin/assets/vendors/css/vendor.bundle.base.css">
 <!-- endinject -->
 <!-- Plugin css for this page -->
 <link rel="stylesheet" href="/admin/assets/vendors/jvectormap/jquery-jvectormap.css">
 <link rel="stylesheet" href="/admin/assets/vendors/flag-icon-css/css/flag-icon.min.css">
 <link rel="stylesheet" href="/admin/assets/vendors/owl-carousel-2/owl.carousel.min.css">
 <link rel="stylesheet" href="/admin/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.rtl.min.css" integrity="sha512-+4ZGBJ8xSuGqgpJFWxrCPLm5FjQe5oVj/08JHPaiZTWRyHMUPMYD5SY92ff/AfmUoV92xo8SSHvkn58cBUw1GA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- End plugin css for this page -->
 <!-- inject:css -->
@@ -23,6 +24,6 @@
 <link rel="stylesheet" href="/admin/assets/css/style.css">
 <link rel="stylesheet" href="/admin/assets/css/custom.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-@livewireStyles
+
 <!-- End layout styles -->
 <link rel="shortcut icon" href="/admin/assets/images/favicon.png" />

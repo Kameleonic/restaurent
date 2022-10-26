@@ -84,6 +84,8 @@
     padding: 2px!important;
     border: 1px solid rgba(0, 0, 0, 0.1)!important;
     color: rgba(21, 21, 21, 0.963)!important;
+    font-size: 0.8rem!important;
+    height: 24px;
 
   }
 
@@ -241,14 +243,14 @@
     border-bottom: 1px solid var(--accent-fade);
     }
 
-    .btn-group.btn-accent-center {
+    .btn-group > .btn-accent-center {
     border-radius: 5px;
     background-color: var(--slate-800);
     border-top: 1px solid var(--accent-fade);
     border-bottom: 1px solid var(--accent-fade);
     }
 
-    .btn-group.btn-accent-right {
+    .btn-group > .btn-accent-right {
     border-radius: 5px;
     background-color: var(--slate-800);
     border-right: 4px solid var(--accent);
@@ -256,9 +258,40 @@
     border-bottom: 1px solid var(--accent-fade);
     }
 
-    .btn-group.btn-accent:hover,.btn-accent-center:hover,.btn-accent-right:hover {
+    .btn-group > .btn-accent:hover,.btn-accent-center:hover,.btn-accent-right:hover {
     background-color: var(--ui-dark-glow);
     transition-duration: 300ms;
+    }
+
+    .btn-dropdown {
+        border-radius: 5px;
+    background-color: var(--slate-800);
+    border: 1px solid var(--accent-fade-60);
+    }
+    .btn-dropdown:hover {
+        border-radius: 5px;
+    background-color: var(--bg-slate-700-80)!important;
+    border: 1px solid var(--accent-fade);
+    }
+    .btn-dropdown:focus-within {
+        border-radius: 5px;
+    background-color: var(--bg-slate-700-80)!important;
+    border: 1px solid var(--accent-fade);
+    }
+
+    .dropdown-item {
+        display: inline-flex;
+        align-content: center;
+        background-color: #191c24;
+        font-size: 1rem;
+        color: #eaeaea;
+        transition-duration: 300ms;
+    }
+    .dropdown-item:hover {
+        background-color: #20232d;
+        font-size: 1rem;
+        color: #eeeeee;
+        transition-duration: 300ms;
     }
 
 /* END - Custom button - Styling */
