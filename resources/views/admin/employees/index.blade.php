@@ -3,6 +3,7 @@
 
 <head>
     @include('admin.admincss')
+
 </head>
 
 <body>
@@ -106,19 +107,20 @@
                         </div>
 
                     </div>
+                </form>
             </div>
-            </form>
+
         </div>
     </div>
     <!-- END - Add Employee Modal -->
 
     <div class="page ml">
         <div class="mx-5 my-5">
-            @if (session('success'))
+            @if (session('success-message'))
                 <div class="col-sm-12">
                     <div class="flex alert alert-success alert-dismissible justify-between fade show font-bold"
                         role="alert">
-                        {{ session('success') }}
+                        {{ session('success-message') }}
                         <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
                             <x-lucide-x-square class="h-5 w-5 text-slate-800 rounded" />
                         </button>
@@ -213,9 +215,8 @@
                                 </td>
                                 <td class="trow text-center">
                                     <div class="dropdown">
-                                        <button class="btn btn-dropdown dropdown-toggle" type="button"
-                                            id="dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
+                                        <button class="btn btn-accent dropdown-toggle" type="button" id="dropdown"
+                                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Actions
                                         </button>
                                         <div id="dropdown" class="dropdown-menu" aria-labelledby="triggerId">
@@ -227,11 +228,13 @@
                                                 <x-lucide-edit class="w-4 h-4 mr-3" />
                                                 View/Edit
                                             </a>
-                                            <form action="/portal/employees/delete/{{ $e->employee_id }}"
-                                                method="post">
-                                                {{ method_field('delete') }}
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="dropdown-item danger" href="#">
+                                            <form id="deleteEmployee"
+                                                action="{{ url('/portal/employees/delete', ['employee_id' => $e->employee_id]) }}"
+                                                method="POST">
+                                                @method('delete')
+                                                @csrf
+
+                                                <button type="submit" class="dropdown-item danger">
                                                     <x-lucide-trash-2 class="w-4 h-4 mr-3" />
                                                     Delete
                                                 </button>

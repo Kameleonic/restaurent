@@ -24,9 +24,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('homepage');
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+
 
 
 // View reservation page
@@ -37,52 +35,57 @@ Route::post("/reserve", [HomeController::class, 'reserve']);
 
 // * Admin Routes * //
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(
+    ['middleware' => ['auth']],
+    function () {
 
-    Route::get('/portal/dashboard', [AdminController::class, 'portalHome']);
+        Route::get('/portal/dashboard', [AdminController::class, 'portalHome'])->name('portal.home');
 
-    // BEGIN - Report Routes
-    Route::get('/portal/reports/reservations-booked-for-today', [ReservationController::class, 'reservationsBookedForToday']);
-    Route::get('/portal/reports/reservations-need-confirming', [ReservationController::class, 'reservationsNeedConfirming']);
-    // END - Report Routes
+        // BEGIN - Report Routes
+        Route::get('/portal/reports/reservations-booked-for-today', [ReservationController::class, 'reservationsBookedForToday']);
+        Route::get('/portal/reports/reservations-need-confirming', [ReservationController::class, 'reservationsNeedConfirming']);
+        // END - Report Routes
 
-    Route::get('/portal/foodmenu', [AdminController::class, 'foodmenu']);
+        Route::get('/portal/foodmenu', [AdminController::class, 'foodmenu']);
 
-    Route::post("/portal/update/{id}", [AdminController::class, 'update']);
+        Route::post("/portal/update/{id}", [AdminController::class, 'update']);
 
-    Route::post('/portal/create-menu-item', [AdminController::class, 'createMenuItem']);
+        Route::post('/portal/create-menu-item', [AdminController::class, 'createMenuItem']);
 
-    Route::get('/portal/edit-item/{id}', [AdminController::class, 'editMenuItem']);
+        Route::get('/portal/edit-item/{id}', [AdminController::class, 'editMenuItem']);
 
-    Route::get('/portal/delete-menu-item/{id}', [AdminController::class, 'deleteMenuItem']);
+        Route::get('/portal/delete-menu-item/{id}', [AdminController::class, 'deleteMenuItem']);
 
-    Route::get('/portal/users', [AdminController::class, 'user']);
+        Route::get('/portal/users', [AdminController::class, 'user']);
 
-    Route::get('/portal/deleteuser/{id}', [AdminController::class, 'deleteuser']);
+        Route::get('/portal/deleteuser/{id}', [AdminController::class, 'deleteuser']);
 
-    // BEGIN - Reservation Routes
-    Route::get('/portal/reservations', [ReservationController::class, 'viewReservations']);
+        // BEGIN - Reservation Routes
+        Route::get('/portal/reservations', [ReservationController::class, 'viewReservations']);
 
-    Route::get("/portal/reservation/{id}", [ReservationController::class, 'reservationInfo']);
+        Route::get("/portal/reservation/{id}", [ReservationController::class, 'reservationInfo']);
 
-    Route::post("/portal/confirm-reservation/{id}", [ReservationController::class, 'confirmReservation']);
+        Route::post("/portal/confirm-reservation/{id}", [ReservationController::class, 'confirmReservation']);
 
-    Route::post("/portal/awaiting-reservation/{id}", [ReservationController::class, 'nullReservation']);
+        Route::post("/portal/awaiting-reservation/{id}", [ReservationController::class, 'nullReservation']);
 
-    Route::post("/portal/decline-reservation/{id}", [ReservationController::class, 'declineReservation']);
-    // END - Reservation Routes
+        Route::post("/portal/decline-reservation/{id}", [ReservationController::class, 'declineReservation']);
+        // END - Reservation Routes
 
-    // BEGIN - Settings Routes
-    Route::get("/portal/settings", [AdminController::class, "viewSettings"]);
-    // END - Settings Routes
+        // BEGIN - Settings Routes
+        Route::get("/portal/settings", [AdminController::class, "viewSettings"]);
+        // END - Settings Routes
 
-    // BEGIN - Employee Routes
-    Route::get("/portal/employees/", [EmployeeController::class, "employeesIndex"])->name('employees.index');
-    Route::get("/portal/employee/{id}", [EmployeeController::class, "viewEmployee"])->name('employees.view');
-    Route::delete("/portal/employees/delete/{employee}", [EmployeeController::class, "employeesDelete"])->name('employees-delete');
-    Route::post("/portal/employees/new-employee", [EmployeeController::class, "createEmployee"])->name('create-employee');
-    Route::post("/portal/employees/update/{employee_id}", [EmployeeController::class, "updateEmployee"])->name('update-employee');
+        // BEGIN - Employee Routes
+        Route::get("/portal/employees/", [EmployeeController::class, "employeesIndex"])->name('employees.index');
+        Route::get("/portal/employee/{id}", [EmployeeController::class, "viewEmployee"])->name('employees.view');
+        // Route::get("/portal/employee/{id}/salary", [EmployeeController::class, "setNewSalary"])->name('employees.set-new-salary');
+        Route::post("/portal/employee/salary/{employee_id}", [EmployeeController::class, "saveNewSalary"])->name('employees.save-new-salary');
+        Route::delete("/portal/employees/delete/{employee_id}", [EmployeeController::class, "employeesDelete"])->name('employees.delete');
+        Route::post("/portal/employees/new-employee", [EmployeeController::class, "createEmployee"])->name('create-employee');
+        Route::post("/portal/employees/update/{employee_id}", [EmployeeController::class, "updateEmployee"])->name('update-employee');
 
-    // END - Employee Routes
-});
+        // END - Employee Routes
+    }
+);
 require __DIR__ . '/auth.php';

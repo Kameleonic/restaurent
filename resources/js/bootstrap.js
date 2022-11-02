@@ -2,6 +2,7 @@ window._ = require('lodash');
 
 var $  = require( 'jquery' );
 var dt = require( 'datatables.net' )( window, $ );
+require( 'sweetalert');
 require( 'datatables.net-dt' )();
 require( 'datatables.net-buttons-dt' )();
 require( 'datatables.net-buttons/js/buttons.html5.js' )();
