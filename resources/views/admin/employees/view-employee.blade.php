@@ -26,99 +26,109 @@
                     </div>
                 </div>
             @endif
-            <a href="{{ url('portal/employees') }}" class="btn btn-accent lg:ml-20">
-                Go Back
-            </a>
 
-            <div class="d-flex dash-card sm:flex-col lg:flex-row justify-start mx-auto">
-                <div class="rounded-md shadow border-faint border-2">
-                    <div class="action-bar bg-slate-800/80 border-accent border-t-2 grid-cols-12 rounded-top">
-                        <div class="grid lg:col-span-2 p-2 border-accentfade">
+            <div class="flex flex-row dash-card">
+                <div class="flex w-20 h-8">
+                    <a href="{{ url('portal/employees') }}" class="btn btn-accent">
+                        Back
+                    </a>
+                </div>
+                <div class="flex">
+                    <div class="grid place-items-center mx-auto">
 
-                            <button class="btn btn-dropdown dropdown-toggle -ml-2 -mt-2" type="button" id="triggerId"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Actions
-                            </button>
-
-                            <div class="dropdown-menu dropdown-menu-start" aria-labelledby="triggerId">
-                                <button type="button" class="dropdown-item" data-bs-toggle="modal"
-                                    data-bs-target="#editEmployeeModal">
-                                    <x-lucide-edit class="h-4 mr-2" />
-                                    <div>Edit Info</div>
-                                </button>
-                                <a class="dropdown-item disabled" href="#">Disabled action</a>
-                                <h6 class="dropdown-header">Section header</h6>
-                                <a class="dropdown-item" href="#">Action</a>
-                                <div class="dropdown-divider"></div>
-
-                                <button data-bs-toggle="modal" data-bs-target="#employeeRemoveConfirmModal"
-                                    type="button" class="text-danger d-flex dropdown-item">
-                                    <x-lucide-trash class="h-4 mr-2" />
-                                    <div>Remove Employee</div>
-                                </button>
-
-
-                            </div>
-                        </div>
-                        <div class="grid col-span-8 justify-center align-items-center">
-                            <div class=" text-xl">
-                                <div>ID: {{ $e->employee_id }}</div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="grid lg:col-span-12">
-                        <div class="flex flex-col px-3 pt-4">
-                            <div class="card-label-header text-white bg-gray-700/80">
-                                Employee Information
-                            </div>
-                            <div class="pl-2 text-ui-dark/70">
-                                <div class="d-flex">
-                                    <div>First:</div>
-                                    <div class="font-light">&nbsp;{{ $e->first_name }}</div>
+                        <div class="border-b-2 border-t-2 border-accent rounded-md shadow col-span-6 gap-2 my-3">
+                            <div
+                                class="action-bar h-auto bg-slate-800 grid-cols-12 rounded-top pb-2 align-items-center">
+                                <div class="grid lg:col-span-2 pl-2 border-accentfade">
+                                    <x-lucide-user class="h-7 w-7 border border-accent bg-accentfade rounded-circle" />
                                 </div>
-                                <div class="d-flex">
-                                    <div>Surname:</div>
-                                    <div class="font-light">&nbsp;{{ $e->surname }}
+                                <div class="col-span-8 text-center text-xxxl font-medium">Employee Information</div>
+                                <div class="col-span-2 flex justify-content-end text-center">
+                                    <div class="mx-1 mt-1 mb-1">
+                                        <button class="btn btn-dropdown dropdown-toggle" type="button" id="triggerId"
+                                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Actions
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-start" aria-labelledby="triggerId">
+                                            <button type="button" class="dropdown-item" data-bs-toggle="modal"
+                                                data-bs-target="#editEmployeeModal">
+                                                <x-lucide-edit class="h-4 mr-2" />
+                                                <div>Edit Info</div>
+                                            </button>
+                                            <a class="dropdown-item disabled" href="#">Disabled action</a>
+                                            <h6 class="dropdown-header">Section header</h6>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <div class="dropdown-divider"></div>
+
+                                            <button data-bs-toggle="modal" data-bs-target="#employeeRemoveConfirmModal"
+                                                type="button" class="text-danger d-flex dropdown-item">
+                                                <x-lucide-trash class="h-4 mr-2" />
+                                                <div>Remove Employee</div>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="flex flex-col px-3 pt-2">
-                            <div class="card-label-header text-white bg-gray-700/80">
-                                Contact Information:
-                            </div>
-                            <div class="pl-2 text-ui-dark/70">
-                                <div class="d-flex align-items-center">
-                                    <x-lucide-mail class="h-5 w-5 mr-2" />
-                                    <div class="font-light">{{ $e->email }}</div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <x-lucide-phone class="h-5 w-5 mr-2 " />
-                                    <div class="font-light">{{ $e->tel_no }}</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col px-3 pt-2">
-                            <div class="card-label-header text-white bg-gray-700/80">
-                                Current Address:
-                            </div>
+                            <div class="grid lg:col-span-12 gap-3 my-3">
+                                <div class="flex flex-col mx-3 mt-2 shadow-sm">
+                                    <div class="card-label-header bg-gray-800/50 px-3 py-2">
+                                        Employee Details
+                                    </div>
+                                    <div class="flex flex-row pl-2 text-white/80 bg-slate-800/20 rounded-b gap-4">
+                                        <div class="flex flex-col gap-3 mx-3 my-4 w-1/2">
+                                            <div class="d-flex align-items-center">
+                                                <x-lucide-user class="h-6 pr-1 mr-2 border-r-3 border-slate-800/50" />
+                                                <div class="font-light">{{ $e->first_name . ' ' . $e->surname }}
+                                                </div>
+                                            </div>
 
-                            <div class="d-inline-flex text-ui-dark/70 pl-2 align-items-center">
-                                <x-lucide-building class="h-12 w-12 mr-2 " />
-                                <div class="font-light">{{ $e->address }}</div>
-                            </div>
-
-                        </div>
-                        <div class="flex flex-col px-3 pt-2">
-                            <div class="card-label-header text-white bg-gray-700/80">
-                                Employment Info:
-                            </div>
-                            <div class="pl-2 text-ui-dark/70">
-                                <div class="d-flex">
-                                    <div>Salary:</div>
-                                    <div class="font-light">&nbsp;{{ $e->salary }}</div>
+                                            <div class="d-flex align-items-center">
+                                                <x-lucide-mail class="h-6 pr-1 mr-2 border-r-3 border-slate-800/50" />
+                                                <div class="font-light">{{ $e->email }}</div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <x-lucide-phone class="h-6 pr-1 mr-2 border-r-3 border-slate-800/50" />
+                                                <div class="font-light">{{ $e->tel_no }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col gap-3 mx-3 my-4 w-1/2">
+                                            <div class="d-flex align-items-center">
+                                                <x-lucide-building
+                                                    class="h-9 pr-1 mr-2 border-r-3 border-slate-800/50" />
+                                                <div class="font-light">{{ $e->address }}</div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <x-lucide-calendar
+                                                    class="h-6 pr-1 mr-2 border-r-3 border-slate-800/50" />
+                                                <div class="font-light">{{ $e->birth_date }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class="flex flex-col mx-3 mt-2 shadow-sm">
+                                    <div class="card-label-header bg-gray-800/50 px-3 py-2">
+                                        Employment Details:
+                                    </div>
+                                    <div
+                                        class="flex flex-row pl-2 text-white/80 bg-slate-800/20 rounded-b gap-4  shadow-sm">
+                                        <div class="flex flex-col gap-3 mx-3 my-3 w-1/2">
+                                            <div class="d-flex align-items-center">
+                                                <x-lucide-banknote
+                                                    class="h-6 pr-1 mr-2 border-r-3 border-slate-800/50" />
+                                                <div class="font-light">£{{ $e->salary }}/yr</div>
+                                            </div>
+
+                                        </div>
+                                        <div class="flex flex-col gap-3 mx-3 my-3 w-1/2">
+
+                                            <div class="d-flex align-items-center">
+                                                <x-lucide-watch class="h-6 pr-1 mr-2 border-r-3 border-slate-800/50" />
+                                                <div class="font-light">{{ $e->contracted_hours }} hr/s</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

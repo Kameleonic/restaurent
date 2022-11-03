@@ -137,7 +137,7 @@
                     Time: {{ \Carbon\Carbon::now()->addHour()->format('H:m') }}
                 </div>
             </div>
-            <div class="dash-card sm:grid-cols-3 lg:grid-cols-6 xl:grid-cols-12 rounded-md shadow border-2">
+            <div class="dash-card sm:grid-cols-3 lg:grid-cols-6 xl:grid-cols-12 rounded-md shadow">
                 <!-- BEGIN - Trigger Modal -->
                 <div class="col-span-12 p-2 panel-nav">
                     <div class="btn-group" role="group" aria-label="Basic example">
@@ -246,7 +246,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div class="col-span-4 dash-panel-static border border-accentfade">
+                <div class="col-span-4 dash-panel-static">
                     <h6>
                         A chart of employees that have an active working status.
                     </h6>

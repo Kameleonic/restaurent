@@ -189,8 +189,7 @@ select option:first {
     border-radius: 0.5rem 0.5rem 0 0;
     font-weight: 600;
     font-size: 1.23rem;
-    color: var(--ui-dark-80);
-    margin-bottom: 0.5rem;
+    color: var(--accent);
 }
 
 .dash-panel {
@@ -379,23 +378,33 @@ select option:first {
 .btn-dropdown {
     transition: border 500ms, border-radius 500ms, ease-in-out;
     transition-duration: 150ms;
+    transform: skew(2deg, 0deg);
     border: 1px solid var(--accent-fade);
     border-top: 3px solid var(--accent-fade);
     border-radius: 0.25rem !important;
     background-color: #212d3e;
+    color: rgba(255, 255, 255, 0.815);
 }
 
 .btn-dropdown:hover {
-    border-radius: 0.1rem 0.1rem 0.25rem 0.25rem !important;
-    background-color: #273548 !important;
+    transform: skew(-2deg, 0deg);
+    border-radius: 0.25rem !important;
+    background-color: #2a394e !important;
     border: 1px solid var(--accent-fade);
+    border-bottom: 3px solid var(--accent-fade);
+    color: white;
 }
 
-.btn-dropdown:focus-within {
-    border-radius: 0.1rem 0.1rem 0.25rem 0.25rem !important;
+.btn-dropdown:focus-within,
+.btn-dropdown:active,
+.btn.show {
+    border-radius: 0.25rem !important;
     background-color: var(--bg-slate-700-80) !important;
-    border: 1px solid var(--accent-fade);
+    border-top: 1px solid var(--accent-fade);
+    border-bottom: 3px solid var(--accent-fade) !important;
+    border-color: var(--accent-fade) !important;
 }
+
 
 /* .dropdown-toggle {
     border: 1px solid var(--accent-fade-60);
