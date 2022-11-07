@@ -8,6 +8,8 @@ require( 'datatables.net-buttons-dt' )();
 require( 'datatables.net-buttons/js/buttons.html5.js' )();
 require( 'datatables.net-buttons/js/buttons.print.js' )();
 require( 'datatables.net-select-dt' )();
+require( 'datatables.net-select-dt' )();
+require( 'sweetalert2' )();
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

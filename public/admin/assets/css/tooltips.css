@@ -1,0 +1,49 @@
+#arrow,
+#arrow::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: inherit;
+
+}
+
+#arrow {
+    visibility: hidden;
+    transform: translate(45px, -8px);
+    background-color: var(--accent);
+}
+
+#arrow::before {
+    visibility: visible;
+    content: '';
+    transform: rotate(45deg);
+
+}
+
+#tooltip[data-popper-placement^='top']>.arrow {}
+
+#tooltip {
+    scale: 0;
+    opacity: 0%;
+    transition: opacity 150ms;
+    transition-timing-function: ease-in-out;
+    background: #333;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    font-size: 13px;
+    border: 1px solid var(--accent-fade);
+    border-radius: 8px;
+    display: none;
+
+
+}
+
+#tooltip[data-show] {
+    opacity: 100%;
+    scale: 1;
+    transition: opacity 150ms;
+    transition-timing-function: ease-in-out;
+    display: block;
+
+}

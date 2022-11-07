@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Auth;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\Input;
 use Illuminate\Support\Facades\DB;
-use UxWeb\SweetAlert\SweetAlert;
 
 class EmployeeController extends Controller
 {

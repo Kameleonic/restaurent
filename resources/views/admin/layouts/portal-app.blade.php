@@ -22,17 +22,17 @@
 
 <body class="font-sans antialiased">
     <div class="">
-
-        @include('layouts.navigation')
-
-
-
         <!-- Page Heading -->
         <header class="bg-white shadow">
             <div class="">
                 {{-- {{ $header }} --}}
             </div>
         </header>
+        @include('admin.layouts.portal-navigation')
+
+
+
+
 
         <!-- Page Content -->
         <main>
@@ -40,6 +40,3 @@
         </main>
     </div>
 </body>
-
-
-</html>

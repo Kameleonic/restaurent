@@ -1,15 +1,17 @@
-<x-app-layout>
-</x-app-layout>
+<x-portal-layout>
+</x-portal-layout>
 
 <head>
     @include('admin.admincss')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+        integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
 <body>
 
     @include('admin.navbar')
-    @include('sweet::alert')
     @livewireStyles
 
 
@@ -137,7 +139,8 @@
                     Time: {{ \Carbon\Carbon::now()->addHour()->format('H:m') }}
                 </div>
             </div>
-            <div class="dash-card sm:grid-cols-3 lg:grid-cols-6 xl:grid-cols-12 rounded-md shadow">
+            <div
+                class="dash-card sm:grid-cols-3 lg:grid-cols-6 xl:grid-cols-12 border-b-2 border-t-2 border-accent rounded-lg bg-dark">
                 <!-- BEGIN - Trigger Modal -->
                 <div class="col-span-12 p-2 panel-nav">
                     <div class="btn-group" role="group" aria-label="Basic example">
@@ -214,6 +217,7 @@
                                     @endif
                                 </td>
                                 <td class="trow text-center">
+
                                     <div class="dropdown">
                                         <button class="btn btn-accent dropdown-toggle" type="button" id="dropdown"
                                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -268,7 +272,7 @@
                 labels: [],
                 datasets: [{
                     label: 'Speed',
-                    data: [],
+                    data: [0, 12, 14, 18, 11, 17, 6],
                     borderWidth: 1,
                 }]
             },

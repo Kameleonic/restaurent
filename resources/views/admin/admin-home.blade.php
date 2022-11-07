@@ -1,6 +1,6 @@
-<x-app-layout>
+<x-portal-layout>
 
-</x-app-layout>
+</x-portal-layout>
 
 <!DOCTYPE html>
 <html lang="en">

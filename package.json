@@ -28,6 +28,6 @@
     },
     "dependencies": {
         "datatables.net-bs4": "^1.12.1",
-        "sweetalert2": "^11.6.4"
+        "sweetalert2": "^11.6.6"
     }
 }

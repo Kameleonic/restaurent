@@ -17,52 +17,52 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url('/portal/users') }}">
-                <span class="menu-icon">
-                    <i class="mdi mdi-speedometer"></i>
+            <a class="nav-link active:bg-accent" class="btn" href="{{ url('/portal/users') }}">
+                <span class="menu-icon p-2 border-1 active:bg-accent border-accent">
+                    <x-lucide-users class="h-6 w-6" />
                 </span>
                 <span class="menu-title">Users</span>
             </a>
         </li>
         @if (auth()->user()->usertype == 1)
             <li class="nav-item menu-items">
-                <a class="nav-link" href="{{ url('/portal/employees/dashboard') }}">
-                    <span class="menu-icon">
-                        <i class="mdi mdi-speedometer"></i>
+                <button class="nav-link" href="{{ url('/portal/employees') }}">
+                    <span class="menu-icon p-2 border-1 active:bg-accent border-accent">
+                        <x-lucide-heart-pulse class="h-6 w-6" />
                     </span>
                     <span class="menu-title">Employees</span>
-                </a>
+                </button>
             </li>
         @else
         @endif
         <li class="nav-item menu-items">
             <a class="nav-link" href="{{ url('/portal/foodmenu') }}">
-                <span class="menu-icon">
-                    <i class="mdi mdi-playlist-play"></i>
+                <span class="menu-icon p-2 border-1 active:bg-accent border-accent">
+                    <x-lucide-utensils class="h-6 w-6" />
                 </span>
                 <span class="menu-title">Food Menu</span>
             </a>
         </li>
         <li class="nav-item menu-items">
             <a class="nav-link" href="pages/tables/basic-table.html">
-                <span class="menu-icon">
-                    <i class="mdi mdi-table-large"></i>
+                <span class="menu-icon p-2 border-1 active:bg-accent border-accent">
+                    <x-lucide-chef-hat class="h-6 w-6" />
                 </span>
                 <span class="menu-title">Chefs</span>
             </a>
         </li>
         <li class="nav-item menu-items">
             <a class="nav-link" href="{{ url('/portal/reservations') }}">
-                <span class="menu-icon">
-                    <i class="mdi mdi-chart-bar"></i>
+                <span class="menu-icon p-2 border-1 active:bg-accent border-accent">
+                    <x-lucide-book-open class="h-6 w-6" />
                 </span>
                 <span class="menu-title">Reservations</span>
             </a>
         </li>
         <li class="nav-item menu-items">
             <a class="nav-link" href="{{ url('/portal/settings') }}">
-                <span class="menu-icon">
-                    <i class="mdi mdi-cogs"></i>
+                <span class="menu-icon p-2 border-1 active:bg-accent border-accent">
+                    <x-lucide-settings class="h-6 w-6" />
                 </span>
                 <span class="menu-title">Settings</span>
             </a>

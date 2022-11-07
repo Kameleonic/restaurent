@@ -19,6 +19,7 @@
     --bg-slate-700: #334155;
     --slate-800: #1f293b;
     --bg-slate-700-80: rgb(51, 65, 85, 0.8);
+    --dark: #212529;
 
 }
 
@@ -106,9 +107,8 @@ select option:first {
     top: 0 !important;
     min-height: 100%;
     border-right-width: 4px;
+    background-color: var(--dark);
     border-color: var(--accent);
-    background-color: #16171e;
-    background-image: linear-gradient(43deg, #16171e 0%, #272431 46%, #3a3a49 100%);
 
 }
 
@@ -143,8 +143,7 @@ select option:first {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: 0.5rem;
-    background-color: var(--bg-slate-700-80);
-    border-color: var(--accent-fade-60);
+    background-color: var(--dark);
 }
 
 .card-header {
@@ -189,7 +188,7 @@ select option:first {
     border-radius: 0.5rem 0.5rem 0 0;
     font-weight: 600;
     font-size: 1.23rem;
-    color: var(--accent);
+    color: var(--default-dashboard-text);
 }
 
 .dash-panel {

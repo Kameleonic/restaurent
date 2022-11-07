@@ -1,5 +1,5 @@
-<x-app-layout>
-</x-app-layout>
+<x-portal-layout>
+</x-portal-layout>
 
 <head>
     @include('admin.admincss')
