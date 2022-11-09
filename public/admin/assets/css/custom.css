@@ -97,9 +97,7 @@ select option:first {
 }
 
 .sidebar .nav .nav-item.active .menu-icon i {
-    transition-duration: 250ms;
-    transition-timing-function: ease-in-out;
-    font-size: 1.35rem;
+    color: var(--accent-fade);
 }
 
 .sidebar {
@@ -109,7 +107,10 @@ select option:first {
     border-right-width: 4px;
     background-color: var(--dark);
     border-color: var(--accent);
-
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+    font-size: 1.35rem;
 }
 
 .hide-sidebar {

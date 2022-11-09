@@ -140,9 +140,9 @@
                 </div>
             </div>
             <div
-                class="dash-card sm:grid-cols-3 lg:grid-cols-6 xl:grid-cols-12 border-b-2 border-t-2 border-accent rounded-lg bg-dark">
+                class="dash-card sm:grid-cols-3 lg:grid-cols-12 border-b-2 border-t-2 border-accent rounded-lg bg-dark">
                 <!-- BEGIN - Trigger Modal -->
-                <div class="col-span-12 p-2 panel-nav">
+                <div class="p-2 panel-nav col-span-12">
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <button id="newEmployeeButton" data-bs-toggle="modal" data-bs-target="#createEmployeeModal"
                             type="button" class="btn btn-group btn-accent">
@@ -159,7 +159,7 @@
                 <!-- END - Trigger Modal -->
 
                 <table id="currentEmployeeTable"
-                    class="col-span-12 bg-ui-dark/80 border-4 border-slate-800 rounded-lg shadow text-sm text-white opacity-0 transition-opacity transition-delay-1000 transition-duration-500 ">
+                    class="col-span-9 bg-ui-dark/80 border-4 border-slate-800 rounded-lg shadow text-sm text-white opacity-0 transition-opacity transition-delay-1000 transition-duration-500 ">
 
                     <thead class="text-dthead border-b-2 bg-slate-800 border-accentfade">
                         <th class="border-b-2 pl-2">
@@ -250,7 +250,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div class="col-span-4 dash-panel-static">
+                <div class="col-span-3 dash-panel-static">
                     <h6>
                         A chart of employees that have an active working status.
                     </h6>

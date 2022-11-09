@@ -30,7 +30,7 @@
         <!-- Page Heading -->
         <header class="bg-white shadow">
             <div class="">
-                {{-- {{ $header }} --}}
+
             </div>
         </header>
 

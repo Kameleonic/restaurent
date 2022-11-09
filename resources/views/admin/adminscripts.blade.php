@@ -92,7 +92,7 @@
         });
         $('#currentEmployeeTable').delay(1000).removeClass("opacity-0", 1000);
         $('#currentEmployeeTable_wrapper').addClass(
-            'transition-duration-500 text-white col-span-8 dash-panel-static');
+            'transition-duration-500 text-white col-span-9 dash-panel-static');
         $('.dt-button').addClass('dt-buttonS');
         $("<div class='-translate-y-4 mr-2 mb-1 flex justify-content-center text-lg font-bold'><div class='-mb-10 bg-slate-800 border-l-2 border-r-2 border-slate-800 border-t-2 pb-2 px-2 rounded-top'>Employees Table</div></div>")
             .insertAfter(
